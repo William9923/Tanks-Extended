@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class CoinEffect : MonoBehaviour
 {
@@ -8,22 +9,10 @@ public class CoinEffect : MonoBehaviour
     public float m_HitRadius = 10f;                  
             
 
-    private void Start()
-    {
-        Debug.Log("Coins created");
-    }
-
-
     private void OnTriggerEnter (Collider other)
     {
-        Debug.Log("Hid OnTriggerEnter!");
         // Collect all the colliders in a sphere from the shell's current position to a radius of the explosion radius.
         Collider[] colliders = Physics.OverlapSphere (transform.position, m_HitRadius, m_TankMask);
-
-        if (colliders.Length > 0) 
-        {
-            Debug.Log("Coins is being hit by tanks");
-        }
 
         // Go through all the colliders...
         for (int i = 0; i < colliders.Length; i++)
@@ -35,13 +24,27 @@ public class CoinEffect : MonoBehaviour
             if (!targetRigidbody)
                 continue;
 
-            // ngerubah state disini supaya si tank punya duit nambah... 
-            Debug.Log("Should add money, not implemented");
+            // Find the TargetMoney script associated with the rigidbody.
+            TankMoney targetMoney = targetRigidbody.GetComponent<TankMoney> ();
+
+            if (!targetMoney)
+                continue;
+
+            targetMoney.ReceiveMoney(m_Money);
+            
             // Play audio effect for getting money
             // m_GetCoinsAudio.Play();     
             Destroy (gameObject);
         }
 
-           
+    
+    }
+    public void ChangeValue(int value)
+    {
+        if (value < 0)
+        {
+            throw new Exception("Cannot use negative value for bonus reward");
+        }
+        m_Money = value;
     }
 }
