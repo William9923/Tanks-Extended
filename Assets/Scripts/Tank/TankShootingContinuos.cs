@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TankShooting : MonoBehaviour
+public class TankShootingContinuos : MonoBehaviour
 {
     public int m_PlayerNumber = 1;       
     public Rigidbody m_Shell;            

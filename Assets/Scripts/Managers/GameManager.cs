@@ -10,8 +10,9 @@ public class GameManager : MonoBehaviour
     public CameraControl m_CameraControl;       // Reference to the CameraControl script for control during different phases.
     public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
     public GameObject m_TankPrefab;             // Reference to the prefab the players will control.
+    public GameObject m_CoinPrefab;             // Reference to the coin player will try to obtain
     public TankManager[] m_Tanks;               // A collection of managers for enabling and disabling different aspects of the tanks.
-
+    public CoinManager[] m_Coins;               // A collection of managers for enabling and disabling coins in every rounds
 
     private int m_RoundNumber;                  // Which round the game is currently on.
     private WaitForSeconds m_StartWait;         // Used to have a delay whilst the round starts.
@@ -47,6 +48,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void SpawnAllCoins()
+    {
+        for (int i = 0; i < 10; i++) 
+        {
+            m_Coins[i].m_Instance = 
+                Instantiate(m_CoinPrefab, m_Coins[i].GetRandomInField(),  Quaternion.identity);    
+
+            m_Coins[i].Setup(i);
+        }
+    }
 
     private void SetCameraTargets()
     {
@@ -97,6 +108,9 @@ public class GameManager : MonoBehaviour
         // As soon as the round starts reset the tanks and make sure they can't move.
         ResetAllTanks ();
         DisableTankControl ();
+
+        // Setup All Coins
+        SpawnAllCoins();
 
         // Snap the camera's zoom and position to something appropriate for the reset tanks.
         m_CameraControl.SetStartPositionAndSize ();
