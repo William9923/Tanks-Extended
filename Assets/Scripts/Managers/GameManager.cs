@@ -53,14 +53,14 @@ public class GameManager : MonoBehaviour
 
     private void SpawnAllCoins()
     {
-        for (int i = 0 + (m_RoundNumber - 1) * m_NumCoins; i < m_NumCoins; i++) 
+        for (int i = 0; i < m_NumCoins; i++) 
         {
             Debug.Log(i);
-
-            m_Coins[i] = new CoinManager();
-            m_Coins[i].m_Instance = 
-                Instantiate(m_CoinPrefab, m_Coins[i].GetRandomInField(),  Quaternion.identity);    
-            m_Coins[i].Setup(i + m_NumCoins * m_RoundNumber, m_RoundNumber);
+            int index = i + (m_RoundNumber - 1) * m_NumCoins;
+            m_Coins[index] = new CoinManager();
+            m_Coins[index].m_Instance = 
+                Instantiate(m_CoinPrefab, m_Coins[index].GetRandomInField(),  Quaternion.identity);    
+            m_Coins[index].Setup(i + m_NumCoins * m_RoundNumber, m_RoundNumber);
         }
     }
 
