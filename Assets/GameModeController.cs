@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameModeController : MonoBehaviour
 {
@@ -112,5 +113,10 @@ public class GameModeController : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("Map " + selectedMap + " Mode " + selectedMode);
+        int mapAddition = selectedMap == 1 ? 0 : 2;
+        int sceneActivated = SceneManager.GetActiveScene().buildIndex + mapAddition + selectedMode;
+        SceneManager.LoadScene(sceneActivated);
+        Debug.Log("Load Scene " + sceneActivated);
+        
     }
 }
