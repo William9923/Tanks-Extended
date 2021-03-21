@@ -4,15 +4,17 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public int m_NumRoundsToWin = 5;            // The number of rounds a single player has to win to win the game.
-    public float m_StartDelay = 1f;             // The delay between the start of RoundStarting and RoundPlaying phases.
-    public float m_EndDelay = 2f;               // The delay between the end of RoundPlaying and RoundEnding phases.
+    public int m_NumRoundsToWin = 3;            // The number of rounds a single player has to win to win the game.
+    public int m_NumCoins = 10;                  // Number of coins generated per round
+    public float m_StartDelay = 3f;             // The delay between the start of RoundStarting and RoundPlaying phases.
+    public float m_EndDelay = 3f;               // The delay between the end of RoundPlaying and RoundEnding phases.
     public CameraControl m_CameraControl;       // Reference to the CameraControl script for control during different phases.
     public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
     public GameObject m_TankPrefab;             // Reference to the prefab the players will control.
+    public GameObject m_CoinPrefab;             // Reference to the coin player will try to obtain
     public TankManager[] m_Tanks;               // A collection of managers for enabling and disabling different aspects of the tanks.
-
-
+    
+    private CoinManager[] m_Coins;               // A collection of managers for enabling and disabling coins in every rounds
     private int m_RoundNumber;                  // Which round the game is currently on.
     private WaitForSeconds m_StartWait;         // Used to have a delay whilst the round starts.
     private WaitForSeconds m_EndWait;           // Used to have a delay whilst the round or game ends.
@@ -26,6 +28,8 @@ public class GameManager : MonoBehaviour
         m_StartWait = new WaitForSeconds (m_StartDelay);
         m_EndWait = new WaitForSeconds (m_EndDelay);
 
+        m_Coins = new CoinManager[m_NumRoundsToWin * m_NumCoins];
+        Debug.Log(m_Coins.Length);
         SpawnAllTanks();
         SetCameraTargets();
 
@@ -47,6 +51,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void SpawnAllCoins()
+    {
+        for (int i = 0; i < m_NumCoins; i++) 
+        {
+            Debug.Log(i);
+            int index = i + (m_RoundNumber - 1) * m_NumCoins;
+            m_Coins[index] = new CoinManager();
+            m_Coins[index].m_Instance = 
+                Instantiate(m_CoinPrefab, m_Coins[index].GetRandomInField(),  Quaternion.identity);    
+            m_Coins[index].Setup(i + m_NumCoins * m_RoundNumber, m_RoundNumber);
+        }
+    }
 
     private void SetCameraTargets()
     {
@@ -105,6 +121,9 @@ public class GameManager : MonoBehaviour
         m_RoundNumber++;
         m_MessageText.text = "ROUND " + m_RoundNumber;
 
+        // Setup All Coins
+        SpawnAllCoins();
+
         // Wait for the specified length of time until yielding control back to the game loop.
         yield return m_StartWait;
     }
@@ -131,6 +150,9 @@ public class GameManager : MonoBehaviour
     {
         // Stop tanks from moving.
         DisableTankControl ();
+
+        // Reset unused coins
+        ResetUnusedCoins();
 
         // Clear the winner from the previous round.
         m_RoundWinner = null;
@@ -239,6 +261,14 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < m_Tanks.Length; i++)
         {
             m_Tanks[i].Reset();
+        }
+    }
+
+    private void ResetUnusedCoins()
+    {
+        for (int i = 0 + (m_RoundNumber - 1) * m_NumCoins; i < m_NumCoins; i++)
+        {
+            m_Coins[i].Reset();
         }
     }
 
