@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: e803eeb4db9fd384c81552f4587c5f8a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Tanks1Scene.unity
     guid: f830a20d8abcbc445b2212e17b8a6e24
   - enabled: 1
