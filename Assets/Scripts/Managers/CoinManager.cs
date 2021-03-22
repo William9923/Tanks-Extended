@@ -34,6 +34,6 @@ public class CoinManager
 
     public Vector3 GetRandomInField() 
     {
-        return new Vector3(UnityEngine.Random.Range(-20, 20), -0.42f, UnityEngine.Random.Range(-20, 20));
+        return new Vector3(UnityEngine.Random.Range(-20, 20), 0f, UnityEngine.Random.Range(-20, 20));
     }
 }
