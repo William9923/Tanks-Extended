@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44504875, g: 0.4946409, b: 0.57373875, a: 1}
+  m_IndirectSpecularColor: {r: 0.44504857, g: 0.4946407, b: 0.57373834, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -299,7 +299,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 307028041}
-  - component: {fileID: 307028040}
   - component: {fileID: 307028042}
   - component: {fileID: 307028043}
   m_Layer: 0
@@ -309,40 +308,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &307028040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307028039}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18e521b6f8588c44f9e68c769421eb47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NumRoundsToWin: 5
-  m_NumCoins: 10
-  m_StartDelay: 3
-  m_EndDelay: 3
-  m_CameraControl: {fileID: 1436316904}
-  m_MessageText: {fileID: 931182990}
-  m_TankPrefab: {fileID: 7741000601937239974, guid: f3c6e5a76f7547d459af5cd8115a530e,
-    type: 3}
-  m_CoinPrefab: {fileID: 0}
-  m_Tanks:
-  - m_PlayerColor: {r: 0.099012084, g: 0.40435317, b: 0.8396226, a: 0}
-    m_SpawnPoint: {fileID: 1101794584}
-    m_PlayerNumber: 0
-    m_ColoredPlayerText: 
-    m_Instance: {fileID: 0}
-    m_Wins: 0
-  - m_PlayerColor: {r: 0.9528302, g: 0.04045032, b: 0.04045032, a: 0}
-    m_SpawnPoint: {fileID: 394088763}
-    m_PlayerNumber: 0
-    m_ColoredPlayerText: 
-    m_Instance: {fileID: 0}
-    m_Wins: 0
 --- !u!4 &307028041
 Transform:
   m_ObjectHideFlags: 0
@@ -466,9 +431,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NumRoundsToWin: 3
-  m_NumCoins: 10
+  m_NumCoins: 15
   m_StartDelay: 3
   m_EndDelay: 3
+  m_SpawnCoinTime: 1
+  m_SpawnCoinDelay: 12.5
+  m_SpawnMin: 2
+  m_SpawnMax: 10
   m_CameraControl: {fileID: 1436316904}
   m_MessageText: {fileID: 931182990}
   m_TankPrefab: {fileID: 7741000601937239974, guid: f3c6e5a76f7547d459af5cd8115a530e,

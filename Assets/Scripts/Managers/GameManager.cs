@@ -1,6 +1,14 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+
+enum GameState
+{
+    Waiting,
+    Playing
+}
 
 public class GameManager : MonoBehaviour
 {
@@ -8,19 +16,24 @@ public class GameManager : MonoBehaviour
     public int m_NumCoins = 10;                  // Number of coins generated per round
     public float m_StartDelay = 3f;             // The delay between the start of RoundStarting and RoundPlaying phases.
     public float m_EndDelay = 3f;               // The delay between the end of RoundPlaying and RoundEnding phases.
+    public float m_SpawnCoinTime = 1f;
+    public float m_SpawnCoinDelay = 7.5f;
+    public int m_SpawnMin = 5;
+    public int m_SpawnMax = 10;
     public CameraControl m_CameraControl;       // Reference to the CameraControl script for control during different phases.
     public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
     public GameObject m_TankPrefab;             // Reference to the prefab the players will control.
     public GameObject m_CoinPrefab;             // Reference to the coin player will try to obtain
     public TankManager[] m_Tanks;               // A collection of managers for enabling and disabling different aspects of the tanks.
     
-    private CoinManager[] m_Coins;               // A collection of managers for enabling and disabling coins in every rounds
+    private ArrayList m_Coins;               // A collection of managers for enabling and disabling coins in every rounds
     private int m_RoundNumber;                  // Which round the game is currently on.
     private WaitForSeconds m_StartWait;         // Used to have a delay whilst the round starts.
     private WaitForSeconds m_EndWait;           // Used to have a delay whilst the round or game ends.
     private TankManager m_RoundWinner;          // Reference to the winner of the current round.  Used to make an announcement of who won.
     private TankManager m_GameWinner;           // Reference to the winner of the game.  Used to make an announcement of who won.
-
+    private int m_CurrentCoinsInPlay;
+    private GameState m_GameState;
 
     private void Start()
     {
@@ -28,8 +41,10 @@ public class GameManager : MonoBehaviour
         m_StartWait = new WaitForSeconds (m_StartDelay);
         m_EndWait = new WaitForSeconds (m_EndDelay);
 
-        m_Coins = new CoinManager[m_NumRoundsToWin * m_NumCoins];
-        Debug.Log(m_Coins.Length);
+        m_Coins = new ArrayList();
+        m_CurrentCoinsInPlay = 0;
+        m_GameState = GameState.Waiting;
+
         SpawnAllTanks();
         SetCameraTargets();
 
@@ -51,17 +66,31 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void SpawnAllCoins()
+    private void StartSpawningCoins()
     {
-        for (int i = 0; i < m_NumCoins; i++) 
+        InvokeRepeating("SpawnCoins", m_SpawnCoinTime, m_SpawnCoinDelay);
+    }
+
+    private void SpawnCoins()
+    {
+        if (m_GameState == GameState.Playing)
         {
-            Debug.Log(i);
-            int index = i + (m_RoundNumber - 1) * m_NumCoins;
-            m_Coins[index] = new CoinManager();
-            m_Coins[index].m_Instance = 
-                Instantiate(m_CoinPrefab, m_Coins[index].GetRandomInField(),  Quaternion.identity);    
-            m_Coins[index].Setup(i + m_NumCoins * m_RoundNumber, m_RoundNumber);
+            for (int i = 0; i < UnityEngine.Random.Range(m_SpawnMin, m_SpawnMin); i++)
+            {
+                Debug.Log("Spawn Pickup Coins:");
+                m_Coins.Add(new CoinManager());
+            
+                (m_Coins[m_CurrentCoinsInPlay] as CoinManager).m_Instance = 
+                    Instantiate(m_CoinPrefab, (m_Coins[m_CurrentCoinsInPlay] as CoinManager).GetRandomInField(),  Quaternion.identity);
+                (m_Coins[m_CurrentCoinsInPlay] as CoinManager).Setup(i + m_NumCoins * m_RoundNumber, m_RoundNumber);
+                m_CurrentCoinsInPlay++;
+            }
+        } 
+        else 
+        {
+            CancelInvoke("SpawnCoins");
         }
+        
     }
 
     private void SetCameraTargets()
@@ -121,8 +150,11 @@ public class GameManager : MonoBehaviour
         m_RoundNumber++;
         m_MessageText.text = "ROUND " + m_RoundNumber;
 
+        // Setup gamestate
+        m_GameState = GameState.Playing;
+
         // Setup All Coins
-        SpawnAllCoins();
+        StartSpawningCoins();
 
         // Wait for the specified length of time until yielding control back to the game loop.
         yield return m_StartWait;
@@ -148,6 +180,9 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator RoundEnding ()
     {
+        // setup game state
+        m_GameState = GameState.Waiting;
+
         // Stop tanks from moving.
         DisableTankControl ();
 
@@ -266,9 +301,9 @@ public class GameManager : MonoBehaviour
 
     private void ResetUnusedCoins()
     {
-        for (int i = 0 + (m_RoundNumber - 1) * m_NumCoins; i < m_NumCoins; i++)
+        for (int i = 0; i < m_CurrentCoinsInPlay; i++)
         {
-            m_Coins[i].Reset();
+            (m_Coins[i] as CoinManager).Reset();
         }
     }
 

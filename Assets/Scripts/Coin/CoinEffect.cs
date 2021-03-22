@@ -37,8 +37,8 @@ public class CoinEffect : MonoBehaviour
             Destroy (gameObject);
         }
 
-    
     }
+
     public void ChangeValue(int value)
     {
         if (value < 0)

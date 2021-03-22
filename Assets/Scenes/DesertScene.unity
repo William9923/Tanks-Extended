@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44494176, g: 0.4945194, b: 0.5736577, a: 1}
+  m_IndirectSpecularColor: {r: 0.44504857, g: 0.4946407, b: 0.57373834, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -256,6 +256,10 @@ MonoBehaviour:
   m_NumCoins: 10
   m_StartDelay: 3
   m_EndDelay: 3
+  m_SpawnCoinTime: 1
+  m_SpawnCoinDelay: 12.5
+  m_SpawnMin: 2
+  m_SpawnMax: 10
   m_CameraControl: {fileID: 1436316904}
   m_MessageText: {fileID: 931182990}
   m_TankPrefab: {fileID: 7741000601937239974, guid: f3c6e5a76f7547d459af5cd8115a530e,
@@ -397,9 +401,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NumRoundsToWin: 3
-  m_NumCoins: 10
-  m_StartDelay: 3
-  m_EndDelay: 3
+  m_NumCoins: 15
+  m_StartDelay: 2
+  m_EndDelay: 2
+  m_SpawnCoinTime: 1
+  m_SpawnCoinDelay: 7.5
+  m_SpawnMin: 5
+  m_SpawnMax: 10
   m_CameraControl: {fileID: 1436316904}
   m_MessageText: {fileID: 931182990}
   m_TankPrefab: {fileID: 7741000601937239974, guid: f3c6e5a76f7547d459af5cd8115a530e,
