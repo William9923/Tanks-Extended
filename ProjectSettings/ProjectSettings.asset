@@ -715,7 +715,7 @@ PlayerSettings:
   cloudServicesEnabled:
     Analytics: 0
     Build: 0
-    Collab: 1
+    Collab: 0
     ErrorHub: 0
     Game_Performance: 0
     Hub: 0
@@ -734,10 +734,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: f5d20aba-1a93-4b6e-b0e4-c1d58230d315
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
-  projectName: Tank Top
-  organizationId: unity_13518138
+  projectName: TANKS
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
