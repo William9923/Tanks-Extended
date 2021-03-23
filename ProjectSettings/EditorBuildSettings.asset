@@ -11,13 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: e803eeb4db9fd384c81552f4587c5f8a
-  - enabled: 0
-    path: Assets/Scenes/MoneyScene.unity
-    guid: 960f8ab3ecf0df54995a7b1df37d698f
   - enabled: 1
     path: Assets/Scenes/DesertScene.unity
     guid: 6b283ab0beae69c458b0a9ab41d2560f
   - enabled: 1
+    path: Assets/Scenes/DesertSceneII.unity
+    guid: 584e8180684be9d408adeda6d066d266
+  - enabled: 1
     path: Assets/Scenes/SnowScene.unity
     guid: 6317700372f17e546ad5ff0315555af2
+  - enabled: 1
+    path: Assets/Scenes/SnowSceneII.unity
+    guid: d40738dd90da7114b85fd7bb80abfa33
   m_configObjects: {}

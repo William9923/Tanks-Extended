@@ -32,6 +32,17 @@ public class CoinManager
         m_Instance.SetActive(true);
     }
 
+    public void Delete() 
+    {
+        if (m_Instance == null)
+        {
+            Debug.Log("Coin had been picked up!");
+            return;
+        }
+
+        m_Instance.SetActive(false);
+    }
+
     public Vector3 GetRandomInField() 
     {
         return new Vector3(UnityEngine.Random.Range(-20, 20), 0f, UnityEngine.Random.Range(-20, 20));
