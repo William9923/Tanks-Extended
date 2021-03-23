@@ -43,4 +43,9 @@ public class TankMoney : MonoBehaviour
     {
         m_CanExchange = true;
     }
+
+    public int GetMoney()
+    {
+        return m_CurrentMoney;
+    }
 }

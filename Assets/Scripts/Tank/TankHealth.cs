@@ -13,11 +13,11 @@ public class TankHealth : MonoBehaviour
     
     private AudioSource m_ExplosionAudio;          
     private ParticleSystem m_ExplosionParticles;   
-    private float m_CurrentHealth;  
-    private bool m_Dead;            
+    protected float m_CurrentHealth;  
+    protected bool m_Dead;            
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
         m_ExplosionParticles = Instantiate(m_ExplosionPrefab).GetComponent<ParticleSystem>();
         m_ExplosionAudio = m_ExplosionParticles.GetComponent<AudioSource>();
@@ -59,7 +59,7 @@ public class TankHealth : MonoBehaviour
     }
 
 
-    private void OnDeath()
+    protected virtual void OnDeath()
     {
         // Play the effects for the death of the tank and deactivate it.
         // Set the flag so that this function is only called once.
