@@ -4,7 +4,10 @@ using System;
 public class CoinEffect : MonoBehaviour
 {
     public LayerMask m_TankMask;       
-    // public AudioSource m_GetCoinsAudio;  --> cari assetnya ntar             
+    
+    // TODO : Effect sound
+    // public AudioSource m_GetCoinsAudio;  --> cari assetnya ntar
+
     public int m_Money = 100;  
     public float m_HitRadius = 2f;                  
             

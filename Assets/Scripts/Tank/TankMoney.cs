@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 public class TankMoney : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class TankMoney : MonoBehaviour
     private bool m_CanExchange;     
 
     // TODO : Nyambungin dengan UI buat nampilin jumlah duit yang dipunya saat ini
+    // public TMP_Text m_MoneyText;
 
     private void Awake()
     {
         m_CurrentMoney = m_StartingMoney;
+        // UpdateUI();
     }
 
     public void ReceiveMoney(int amount) 
@@ -23,7 +26,13 @@ public class TankMoney : MonoBehaviour
         }
 
         Debug.Log($"Current Money: {m_CurrentMoney}");
+        // UpdateUI();
     }
+
+    // private void UpdateUI()
+    // {
+    //     m_MoneyText.text = m_CurrentMoney.ToString();
+    // }
 
     public void BuyItem(int price) 
     {
@@ -37,6 +46,7 @@ public class TankMoney : MonoBehaviour
             Debug.Log($"But item with price : {price}");
             m_CurrentMoney -= price;
         }
+        // UpdateUI();
     }
 
     private void OnEnable()

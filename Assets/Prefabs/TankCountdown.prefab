@@ -58,6 +58,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7617608836661178949, guid: f3c6e5a76f7547d459af5cd8115a530e,
+        type: 3}
+      propertyPath: m_MoneyText
+      value: 
+      objectReference: {fileID: 8560640971460645952}
     - target: {fileID: 7741000601937239974, guid: f3c6e5a76f7547d459af5cd8115a530e,
         type: 3}
       propertyPath: m_Icon
@@ -166,5 +171,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8560640971460645952 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6885634207698744, guid: f3c6e5a76f7547d459af5cd8115a530e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8563022850314853240}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
