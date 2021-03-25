@@ -14,18 +14,18 @@ public class CoinManager
         m_CoinId = id;
         m_Effect = m_Instance.GetComponent<CoinEffect>();
 
-        m_Effect.ChangeValue(m_Effect.m_Money * numberOfRound); // can use more complicated logic
+
+        // TODO : Add logic based on game mode for Determine value of each coins
+        m_Effect.ChangeValue(m_Effect.m_Money * numberOfRound); 
     }
 
     public void Reset()
     {
         if (m_Instance == null) 
         {
-            Debug.Log("Coin had beed picked up!");
             return;
         }
 
-        // For remaining coins after a round, the remaining not destroyed but added for future
         m_Instance.transform.position = GetRandomInField();
 
         m_Instance.SetActive(false);
@@ -36,7 +36,6 @@ public class CoinManager
     {
         if (m_Instance == null)
         {
-            Debug.Log("Coin had been picked up!");
             return;
         }
 
@@ -45,6 +44,6 @@ public class CoinManager
 
     public Vector3 GetRandomInField() 
     {
-        return new Vector3(UnityEngine.Random.Range(-20, 20), 0f, UnityEngine.Random.Range(-20, 20));
+        return new Vector3(UnityEngine.Random.Range(-20, 20), 6f, UnityEngine.Random.Range(-20, 20));
     }
 }

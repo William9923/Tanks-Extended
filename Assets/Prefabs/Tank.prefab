@@ -904,6 +904,9 @@ GameObject:
   - component: {fileID: 8000850237989805677}
   - component: {fileID: 6462905484708878641}
   - component: {fileID: 7617608836661178949}
+  - component: {fileID: 1518403953901756875}
+  - component: {fileID: 4927977483107816691}
+  - component: {fileID: 6498553157581789263}
   m_Layer: 9
   m_Name: Tank
   m_TagString: Untagged
@@ -1197,7 +1200,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7741000601937239974}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06b38fa3f5188f6419ab17bc1669c18c, type: 3}
   m_Name: 
@@ -1225,6 +1228,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StartingMoney: 0
+--- !u!114 &1518403953901756875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7741000601937239974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e04244b297b6544b20c02dbcf3496a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerNumber: 1
+  m_CurrentWeapon: 0
+--- !u!114 &4927977483107816691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7741000601937239974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 996a06c694f1b67469daa6f2bcb8ef3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerNumber: 1
+  m_Ammo: {fileID: 3412480343216509483, guid: b0f58a9d15b4e9a43b350f87a653362d, type: 3}
+  m_FireTransform: {fileID: 643562148}
+  m_DelayAmmo: 0.2
+--- !u!114 &6498553157581789263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7741000601937239974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67bc41c6d81bcba45930eac44d71011a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerNumber: 1
+  m_Shell: {fileID: 401509148, guid: d80c71bbf8e5e504eabbf05d83590dd4, type: 3}
+  m_FireTransform: {fileID: 643562148}
+  m_AimSlider: {fileID: 1197756075}
+  m_ShootingAudio: {fileID: 6244860754402752266}
+  m_ChargingClip: {fileID: 8300000, guid: c17f124fcdc0f5446a72f793898bd74b, type: 3}
+  m_FireClip: {fileID: 8300000, guid: 672a9941361ad494a99fba36759eca80, type: 3}
+  m_MinLaunchForce: 15
+  m_MaxLaunchForce: 30
+  m_MaxChargeTime: 0.75
 --- !u!1 &7790468826368349190
 GameObject:
   m_ObjectHideFlags: 0

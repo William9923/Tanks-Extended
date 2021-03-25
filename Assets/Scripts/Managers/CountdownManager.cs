@@ -86,7 +86,6 @@ public class CountdownManager : MonoBehaviour
         {
             for (int i = 0; i < UnityEngine.Random.Range(m_SpawnMin, m_SpawnMin); i++)
             {
-                Debug.Log("Spawn Pickup Coins:");
                 m_Coins.Add(new CoinManager());
             
                 (m_Coins[m_CurrentCoinsInPlay] as CoinManager).m_Instance = 
