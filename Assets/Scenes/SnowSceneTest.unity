@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44504875, g: 0.4946409, b: 0.57373875, a: 1}
+  m_IndirectSpecularColor: {r: 0.44504857, g: 0.4946407, b: 0.57373834, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -498,7 +498,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8ce5d020a687c314891341b4126d1de2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.36
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -594,43 +594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce9def505f50834bb2662e05dffdf70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NumCoins: 20
-  m_StartDelay: 2
-  m_EndDelay: 2
-  m_MatchDuration: 60
-  m_CurrentTime: 1
-  m_SpawnCoinTime: 1
-  m_SpawnCoinDelay: 5
-  m_SpawnMin: 7
-  m_SpawnMax: 15
-  m_CameraControl: {fileID: 1436316904}
-  m_MessageText: {fileID: 931182990}
-  m_TimeText: {fileID: 1288809847}
-  m_PlayerStats: {fileID: 1809873620}
-  m_TankPrefab: {fileID: 3972864133243508641, guid: 93e860d4a96f1104398e4c7391fefa8a,
-    type: 3}
-  m_CoinPrefab: {fileID: 574299389946617043, guid: ece2865200c5858409c8ad769ece7acb,
-    type: 3}
-  m_SpawnPoints:
-  - {fileID: 1101794584}
-  - {fileID: 394088763}
-  - {fileID: 1753860783}
-  - {fileID: 81825236}
-  m_Tanks:
-  - m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
-    m_InitialSpawnPointIdx: 0
-    m_SpawnPoint: []
-    m_PlayerNumber: 0
-    m_ColoredPlayerText: 
-    m_Instance: {fileID: 0}
-    m_Wins: 0
-  - m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
-    m_InitialSpawnPointIdx: 0
-    m_SpawnPoint: []
-    m_PlayerNumber: 0
-    m_ColoredPlayerText: 
-    m_Instance: {fileID: 0}
-    m_Wins: 0
 --- !u!1 &394088762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,6 +1258,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7741000601937239973, guid: f3c6e5a76f7547d459af5cd8115a530e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bfd2849bba06c4b4db3600baadc2aabb, type: 3}
     - target: {fileID: 7741000601937239974, guid: f3c6e5a76f7547d459af5cd8115a530e,
         type: 3}
       propertyPath: m_Name
@@ -1580,3 +1548,107 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &9138554117884644898
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 574299389946617043, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: m_Name
+      value: CoinCustom
+      objectReference: {fileID: 0}
+    - target: {fileID: 574299389946617647, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 574299389946617647, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.104
+      objectReference: {fileID: 0}
+    - target: {fileID: 574299389946617647, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.624
+      objectReference: {fileID: 0}
+    - target: {fileID: 574299389946617647, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.959
+      objectReference: {fileID: 0}
+    - target: {fileID: 574299389946617647, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.06230623
+      objectReference: {fileID: 0}
+    - target: {fileID: 574299389946617647, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.69833106
+      objectReference: {fileID: 0}
+    - target: {fileID: 574299389946617647, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.06550139
+      objectReference: {fileID: 0}
+    - target: {fileID: 574299389946617647, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.71004313
+      objectReference: {fileID: 0}
+    - target: {fileID: 574299389946617647, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -10.372001
+      objectReference: {fileID: 0}
+    - target: {fileID: 574299389946617647, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -449.063
+      objectReference: {fileID: 0}
+    - target: {fileID: 574299389946617647, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 540.175
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288774404534457163, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288774404534457163, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288774404534457163, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: Priority
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288774404534457163, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bfd2849bba06c4b4db3600baadc2aabb, type: 3}
+    - target: {fileID: 7288774404534457163, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288774404534457163, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288774404534457163, guid: ece2865200c5858409c8ad769ece7acb,
+        type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0.16944444
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ece2865200c5858409c8ad769ece7acb, type: 3}

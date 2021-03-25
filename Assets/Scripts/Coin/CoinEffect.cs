@@ -4,9 +4,8 @@ using System;
 public class CoinEffect : MonoBehaviour
 {
     public LayerMask m_TankMask;       
-    
-    // TODO : Effect sound
-    // public AudioSource m_GetCoinsAudio;  --> cari assetnya ntar
+
+    public AudioSource m_CoinsAudio;
 
     public int m_Money = 100;  
     public float m_HitRadius = 2f;                  
@@ -38,7 +37,7 @@ public class CoinEffect : MonoBehaviour
         targetMoney.ReceiveMoney(m_Money);
         
         // Play audio effect for getting money
-        // m_GetCoinsAudio.Play();
+        m_CoinsAudio.Play();
 
         Destroy (gameObject);
 
