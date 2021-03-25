@@ -2,20 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
+
 
 public class OptionPref : MonoBehaviour
 {
-    InputField playerName;
+    InputField playerOneName, playerTwoName;
     Slider volumeSlider;
+
+    public AudioMixer audioMixer;
+
     // Start is called before the first frame update
     void Start()
     {
-        playerName = GameObject.Find("PlayerNameInput").GetComponent<InputField>();
+        playerOneName = GameObject.Find("PlayerOneInput").GetComponent<InputField>();
+        playerTwoName = GameObject.Find("PlayerTwoInput").GetComponent<InputField>();
         volumeSlider = GameObject.Find("VolumeSlider").GetComponent<Slider>();
 
-        if (PlayerPrefs.HasKey("playerName"))
+        if (PlayerPrefs.HasKey("playerOneName"))
         {
-            playerName.text = PlayerPrefs.GetString("playerName");
+            playerOneName.text = PlayerPrefs.GetString("playerOneName");
+        }
+        if (PlayerPrefs.HasKey("playerTwoName"))
+        {
+            playerTwoName.text = PlayerPrefs.GetString("playerTwoName");
         }
         if (PlayerPrefs.HasKey("volumeValue"))
         {
@@ -31,8 +41,15 @@ public class OptionPref : MonoBehaviour
 
     public void Back()
     {
-        PlayerPrefs.SetString("playerName", playerName.text);
+        PlayerPrefs.SetString("playerOneName", playerOneName.text);
+        PlayerPrefs.SetString("playerTwoName", playerTwoName.text);
         PlayerPrefs.SetFloat("volumeValue", volumeSlider.value);
         PlayerPrefs.Save();
+    }
+
+    public void setVolume(float volume)
+    {
+        Debug.Log(volume);
+        audioMixer.SetFloat("volume", volume);
     }
 }

@@ -20,6 +20,7 @@ public class TankMovement : MonoBehaviour
     private void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
+        m_Rigidbody.freezeRotation = true;
     }
 
     private void OnEnable()
