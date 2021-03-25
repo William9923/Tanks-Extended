@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 enum GameState
 {
@@ -33,6 +34,7 @@ public class RoundMatchManager : MonoBehaviour
     private TankRoundManager m_GameWinner;           // Reference to the winner of the game.  Used to make an announcement of who won.
     private int m_CurrentCoinsInPlay;
     private GameState m_GameState;
+    private Scene activeScene;                  //Needed to check if shop is open
 
     private void Start()
     {
@@ -321,5 +323,24 @@ public class RoundMatchManager : MonoBehaviour
         {
             m_Tanks[i].DisableControl();
         }
+    }
+
+    void Update()
+    {
+        if (!SceneManager.GetSceneByName("Shop").isLoaded)
+        {
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                SceneManager.LoadScene("Shop", LoadSceneMode.Additive);
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                SceneManager.UnloadSceneAsync("Shop");
+            }
+        }
+        
     }
 }

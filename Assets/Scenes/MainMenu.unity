@@ -1030,13 +1030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a730220c85a654f9c65f26158242de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map1Button: {fileID: 0}
-  map2Button: {fileID: 0}
-  mode1Button: {fileID: 0}
-  mode2Button: {fileID: 0}
-  playButton: {fileID: 0}
-  selectedMap: 0
-  selectedMode: 0
 --- !u!1 &389573122
 GameObject:
   m_ObjectHideFlags: 0
