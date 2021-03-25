@@ -442,7 +442,7 @@ MonoBehaviour:
   m_MessageText: {fileID: 931182990}
   m_TankPrefab: {fileID: 7741000601937239974, guid: f3c6e5a76f7547d459af5cd8115a530e,
     type: 3}
-  m_CoinPrefab: {fileID: 2032806900190921547, guid: 780ba0c86a72a224fba84b2df8e979c6,
+  m_CoinPrefab: {fileID: 574299389946617043, guid: ece2865200c5858409c8ad769ece7acb,
     type: 3}
   m_Tanks:
   - m_PlayerColor: {r: 0.80784315, g: 0.54509807, b: 0.748589, a: 0}

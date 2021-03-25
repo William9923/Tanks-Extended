@@ -21,7 +21,6 @@ public class CoinManager
     {
         if (m_Instance == null) 
         {
-            Debug.Log("Coin had beed picked up!");
             return;
         }
 
@@ -36,7 +35,6 @@ public class CoinManager
     {
         if (m_Instance == null)
         {
-            Debug.Log("Coin had been picked up!");
             return;
         }
 
@@ -45,6 +43,6 @@ public class CoinManager
 
     public Vector3 GetRandomInField() 
     {
-        return new Vector3(UnityEngine.Random.Range(-20, 20), 0f, UnityEngine.Random.Range(-20, 20));
+        return new Vector3(UnityEngine.Random.Range(-20, 20), 6f, UnityEngine.Random.Range(-20, 20));
     }
 }

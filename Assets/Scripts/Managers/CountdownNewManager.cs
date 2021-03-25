@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CountdownManager : MonoBehaviour
+public class CountdownNewManager : MonoBehaviour
 {
     public int m_NumCoins = 10;                  // Number of coins generated per round
     public float m_StartDelay = 3f;             // The delay between the start of RoundStarting and RoundPlaying phases.
@@ -26,14 +26,14 @@ public class CountdownManager : MonoBehaviour
     public GameObject m_CoinPrefab;             // Reference to the coin player will try to obtain
     
     public Transform[] m_SpawnPoints;           // To choose spawnPoint possible for max 4 players
-    public TankCountdownManager[] m_Tanks;               // A collection of managers for enabling and disabling different aspects of the tanks.
+    public TankNewCountdownManager[] m_Tanks;               // A collection of managers for enabling and disabling different aspects of the tanks.
     private ArrayList m_Coins;                  // A collection of managers for enabling and disabling coins in every rounds
     
     private WaitForSeconds m_StartWait;         // Used to have a delay whilst the round starts.
     private WaitForSeconds m_EndWait;           // Used to have a delay whilst the round or game ends.
     private WaitForSeconds m_PlayWait;
 
-    private TankCountdownManager m_GameWinner;           // Reference to the winner of the game.  Used to make an announcement of who won.
+    private TankNewCountdownManager m_GameWinner;           // Reference to the winner of the game.  Used to make an announcement of who won.
     
     private int m_CurrentCoinsInPlay;
     private GameState m_GameState;
@@ -205,7 +205,7 @@ public class CountdownManager : MonoBehaviour
 
 
     // This function is to find out if there is a winner of the game.
-    private TankCountdownManager GetGameWinner()
+    private TankNewCountdownManager GetGameWinner()
     {
         int index = -1;
         int numberOfWin = -1;
