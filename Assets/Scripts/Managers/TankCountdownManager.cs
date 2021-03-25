@@ -18,6 +18,7 @@ public class TankCountdownManager
     private TankWeapon m_Weapon;
     private GameObject m_CanvasGameObject;
     private int m_CurrMoney;
+    private string playerName;
 
     public void Setup()
     {
@@ -34,8 +35,11 @@ public class TankCountdownManager
 
         m_Movement.m_PlayerNumber = m_PlayerNumber;
         m_Weapon.m_PlayerNumber = m_PlayerNumber;
+        
 
-        m_ColoredPlayerText = "<color=#" + ColorUtility.ToHtmlStringRGB(m_PlayerColor) + ">PLAYER " + m_PlayerNumber + "</color>";
+        playerName = m_PlayerNumber == 1 ? PlayerPrefs.GetString("playerOneName") : PlayerPrefs.GetString("playerTwoName");
+
+        m_ColoredPlayerText = "<color=#" + ColorUtility.ToHtmlStringRGB(m_PlayerColor) + ">" + playerName + "</color>";
 
         MeshRenderer[] renderers = m_Instance.GetComponentsInChildren<MeshRenderer>();
 

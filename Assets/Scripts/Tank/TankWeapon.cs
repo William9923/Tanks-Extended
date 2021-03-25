@@ -33,7 +33,14 @@ public class TankWeapon : MonoBehaviour {
     private void OnEnable()
     {
         // Enable each weapon
+        if (m_Shell == null)
+            m_Shell = GetComponentInParent<ShootingShell>();
+
         m_Shell.OnEnable();
+
+        if (m_Ammo == null)
+            m_Ammo = GetComponentInParent<ShootingAmmo>();
+
         m_Ammo.OnEnable();
 
         EquipWeapon();
