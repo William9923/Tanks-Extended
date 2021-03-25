@@ -14,7 +14,9 @@ public class CoinManager
         m_CoinId = id;
         m_Effect = m_Instance.GetComponent<CoinEffect>();
 
-        m_Effect.ChangeValue(m_Effect.m_Money * numberOfRound); // can use more complicated logic
+
+        // TODO : Add logic based on game mode for Determine value of each coins
+        m_Effect.ChangeValue(m_Effect.m_Money * numberOfRound); 
     }
 
     public void Reset()
@@ -24,7 +26,6 @@ public class CoinManager
             return;
         }
 
-        // For remaining coins after a round, the remaining not destroyed but added for future
         m_Instance.transform.position = GetRandomInField();
 
         m_Instance.SetActive(false);

@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2118682695837098016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4482533863144402900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29dbd76455c1c4b4e86465c69285084e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TankMask:
+    serializedVersion: 2
+    m_Bits: 512
+  m_Damage: 25
+  m_ExplosionRadius: 2
+  m_ProjSpeed: 7.5
+  m_AmmoLifetime: 2
 --- !u!1001 &3412480343469644087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7,6 +26,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 401509150, guid: d80c71bbf8e5e504eabbf05d83590dd4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401509150, guid: d80c71bbf8e5e504eabbf05d83590dd4, type: 3}
+      propertyPath: m_MaxDamage
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 401509150, guid: d80c71bbf8e5e504eabbf05d83590dd4, type: 3}
+      propertyPath: m_ExplosionForce
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 401509150, guid: d80c71bbf8e5e504eabbf05d83590dd4, type: 3}
+      propertyPath: m_ExplosionRadius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1256143683567449827, guid: d80c71bbf8e5e504eabbf05d83590dd4,
         type: 3}
       propertyPath: m_Name
@@ -82,5 +117,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3771312736741324757, guid: d80c71bbf8e5e504eabbf05d83590dd4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 401509150, guid: d80c71bbf8e5e504eabbf05d83590dd4, type: 3}
+    - {fileID: 3771312736741324757, guid: d80c71bbf8e5e504eabbf05d83590dd4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d80c71bbf8e5e504eabbf05d83590dd4, type: 3}
+--- !u!1 &4482533863144402900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1256143683567449827, guid: d80c71bbf8e5e504eabbf05d83590dd4,
+    type: 3}
+  m_PrefabInstance: {fileID: 3412480343469644087}
+  m_PrefabAsset: {fileID: 0}

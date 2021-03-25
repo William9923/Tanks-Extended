@@ -8,7 +8,7 @@ public class TankMoney : MonoBehaviour
     private int m_CurrentMoney; 
     private bool m_CanExchange;     
 
-    // punya UI buat nampilin jumlah duit, ntar diattach di scriptnya 
+    // TODO : Nyambungin dengan UI buat nampilin jumlah duit yang dipunya saat ini
 
     private void Awake()
     {

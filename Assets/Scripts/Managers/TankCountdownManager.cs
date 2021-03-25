@@ -15,7 +15,7 @@ public class TankCountdownManager
 
     private TankMovement m_Movement;
     private TankRespawn m_Respawn;       
-    private TankShooting m_Shooting;
+    private TankWeapon m_Weapon;
     private GameObject m_CanvasGameObject;
     private int m_CurrMoney;
 
@@ -23,15 +23,17 @@ public class TankCountdownManager
     {
         m_PlayerColor = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
         m_Movement = m_Instance.GetComponent<TankMovement>();
-        m_Shooting = m_Instance.GetComponent<TankShooting>();
+        m_Weapon = m_Instance.GetComponent<TankWeapon>();
         m_Respawn = m_Instance.GetComponent<TankRespawn>();
 
-        m_Respawn.m_RespawnPoint = m_SpawnPoint;
+        m_Respawn.m_RespawnPoint = m_SpawnPoint;    
+
+        m_Weapon.m_CurrentWeapon = Weapon.AMMO; 
 
         m_CanvasGameObject = m_Instance.GetComponentInChildren<Canvas>().gameObject;
 
         m_Movement.m_PlayerNumber = m_PlayerNumber;
-        m_Shooting.m_PlayerNumber = m_PlayerNumber;
+        m_Weapon.m_PlayerNumber = m_PlayerNumber;
 
         m_ColoredPlayerText = "<color=#" + ColorUtility.ToHtmlStringRGB(m_PlayerColor) + ">PLAYER " + m_PlayerNumber + "</color>";
 
@@ -47,7 +49,7 @@ public class TankCountdownManager
     public void DisableControl()
     {
         m_Movement.enabled = false;
-        m_Shooting.enabled = false;
+        m_Weapon.enabled = false;
 
         m_CanvasGameObject.SetActive(false);
     }
@@ -56,7 +58,7 @@ public class TankCountdownManager
     public void EnableControl()
     {
         m_Movement.enabled = true;
-        m_Shooting.enabled = true;
+        m_Weapon.enabled = true;
 
         m_CanvasGameObject.SetActive(true);
     }

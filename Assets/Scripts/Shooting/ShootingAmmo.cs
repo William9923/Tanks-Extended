@@ -2,12 +2,13 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-[Serializable]
 public class ShootingAmmo : MonoBehaviour
 {
     public int m_PlayerNumber = 1;       
     public Rigidbody m_Ammo;            
-    public Transform m_FireTransform;    
+    public Transform m_FireTransform;  
+
+    // TODO : Effect in ammo  
 
     private string m_FireButton;          
     public float m_DelayAmmo = 0.2f; 

@@ -15,7 +15,6 @@ public class ShootingShell : MonoBehaviour
     public float m_MinLaunchForce = 15f; 
     public float m_MaxLaunchForce = 30f; 
     public float m_MaxChargeTime = 0.75f;
-    public string m_WeaponName = "shell";
     
     private string m_FireButton;         
     private float m_CurrentLaunchForce;  

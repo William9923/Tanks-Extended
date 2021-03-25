@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 307028041}
   - component: {fileID: 307028042}
   - component: {fileID: 307028043}
+  - component: {fileID: 307028040}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -308,6 +309,45 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &307028040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307028039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04071740f258c0549a822ddd4cbafb47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NumRoundsToWin: 3
+  m_NumCoins: 10
+  m_StartDelay: 3
+  m_EndDelay: 3
+  m_SpawnCoinTime: 1
+  m_SpawnCoinDelay: 7.5
+  m_SpawnMin: 5
+  m_SpawnMax: 10
+  m_CameraControl: {fileID: 1436316904}
+  m_MessageText: {fileID: 931182990}
+  m_TankPrefab: {fileID: 4215708143691158372, guid: ebff564c37bef1d47bb2cbca0a51bf0f,
+    type: 3}
+  m_CoinPrefab: {fileID: 574299389946617043, guid: ece2865200c5858409c8ad769ece7acb,
+    type: 3}
+  m_Tanks:
+  - m_PlayerColor: {r: 0.25591585, g: 0.14244394, b: 0.9150943, a: 0}
+    m_SpawnPoint: {fileID: 1101794584}
+    m_PlayerNumber: 0
+    m_ColoredPlayerText: 
+    m_Instance: {fileID: 0}
+    m_Wins: 0
+  - m_PlayerColor: {r: 0.4056604, g: 0.066972226, b: 0.3126361, a: 0}
+    m_SpawnPoint: {fileID: 394088763}
+    m_PlayerNumber: 0
+    m_ColoredPlayerText: 
+    m_Instance: {fileID: 0}
+    m_Wins: 0
 --- !u!4 &307028041
 Transform:
   m_ObjectHideFlags: 0
@@ -425,7 +465,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307028039}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18e521b6f8588c44f9e68c769421eb47, type: 3}
   m_Name: 

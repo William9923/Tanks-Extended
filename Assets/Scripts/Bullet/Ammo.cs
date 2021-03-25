@@ -1,20 +1,18 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class AmmoContinuos : MonoBehaviour
+public class Ammo : MonoBehaviour
 {
     public LayerMask m_TankMask;                     
     public float m_Damage = 50f;                  
-    public float m_HitForce = 5f;
-    public float m_ExplosionRadius = 2f;     
-    public float m_ExplosionForce = 5f;      
+    public float m_ExplosionRadius = 2f;        
       
-    public float m_ProjSpeed = 12.0f;
+    public float m_ProjSpeed = 7.5f;
     public float m_AmmoLifetime = 2.0f; 
 
     private void Start()
     {
         // please destroy this after few second
-        Destroy(gameObject, m_ProjSpeed);
+        Destroy(gameObject, m_AmmoLifetime);
 
     }
 
