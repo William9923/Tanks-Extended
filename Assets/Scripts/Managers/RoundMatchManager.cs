@@ -22,9 +22,11 @@ public class RoundMatchManager : MonoBehaviour
     public int m_SpawnMax = 10;
     public CameraControl m_CameraControl;       // Reference to the CameraControl script for control during different phases.
     public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
+    public GameObject m_ShopCanvas;                 // Reference to the Shop Menu
     public GameObject m_TankPrefab;             // Reference to the prefab the players will control.
     public GameObject m_CoinPrefab;             // Reference to the coin player will try to obtain
     public TankRoundManager[] m_Tanks;               // A collection of managers for enabling and disabling different aspects of the tanks.
+    public ShopManager[] m_Shops;
     
     private ArrayList m_Coins;               // A collection of managers for enabling and disabling coins in every rounds
     private int m_RoundNumber;                  // Which round the game is currently on.
@@ -35,9 +37,11 @@ public class RoundMatchManager : MonoBehaviour
     private int m_CurrentCoinsInPlay;
     private GameState m_GameState;
     private Scene activeScene;                  //Needed to check if shop is open
-
+    private bool shopOpened;
+    
     private void Start()
     {
+
         // Create the delays so they only have to be made once.
         m_StartWait = new WaitForSeconds (m_StartDelay);
         m_EndWait = new WaitForSeconds (m_EndDelay);
@@ -60,10 +64,16 @@ public class RoundMatchManager : MonoBehaviour
         for (int i = 0; i < m_Tanks.Length; i++)
         {
             // ... create them, set their player number and references needed for control.
-            m_Tanks[i].m_Instance =
-                Instantiate(m_TankPrefab, m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
+
+            var tank = Instantiate(m_TankPrefab, m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
+            m_Tanks[i].m_Instance = tank;
             m_Tanks[i].m_PlayerNumber = i + 1;
             m_Tanks[i].Setup();
+
+            // .. setup for shop also
+            m_Shops[i].m_Instance = tank;
+            m_Shops[i].m_PlayerNumber = i + 1;
+            m_Shops[i].Setup();
         }
     }
 
@@ -327,20 +337,13 @@ public class RoundMatchManager : MonoBehaviour
 
     void Update()
     {
-        if (!SceneManager.GetSceneByName("Shop").isLoaded)
+        foreach (ShopManager manager in m_Shops)
         {
-            if (Input.GetKeyDown(KeyCode.J))
+            if (Input.GetKeyDown(manager.m_Code))
             {
-                SceneManager.LoadScene("Shop", LoadSceneMode.Additive);
-            }
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.J))
-            {
-                SceneManager.UnloadSceneAsync("Shop");
-            }
-        }
-        
+                // .. open the canvas
+                Debug.Log("Open Shop for player ...");
+            }    
+        }     
     }
 }
