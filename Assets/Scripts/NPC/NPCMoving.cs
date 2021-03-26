@@ -30,24 +30,22 @@ public class NPCMoving : MonoBehaviour
 
         transform.LookAt(m_Player.transform);
 
-        // Check if too far ...
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out m_Shot ))
+        float distance = Vector3.Distance(transform.position, m_Player.transform.position);
+
+        // if out of range
+        if (distance >= m_AllowedDistance)
         {
-            // if out of range
-            if (m_Shot.distance >= m_AllowedDistance)
-            {
-                m_NPCAgent.SetDestination(m_Player.transform.position);
-                m_NPCAnimation.SetTrigger("moving");
+            m_NPCAgent.SetDestination(m_Player.transform.position);
+            m_NPCAnimation.SetTrigger("moving");
 
-            }
-            else 
-            {
-                // Set destination to current location
-                m_NPCAgent.SetDestination(transform.position);
+        }
+        else 
+        {
+            // Set destination to current location
+            m_NPCAgent.SetDestination(transform.position);
 
-                // Play Idle Animation
-                m_NPCAnimation.ResetTrigger("moving");
-            }
+            // Play Idle Animation
+            m_NPCAnimation.ResetTrigger("moving");
         }
 
     }
