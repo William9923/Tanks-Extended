@@ -73,7 +73,6 @@ public class RoundMatchManager : MonoBehaviour
             // .. setup for shop also
             m_Shops[i].m_Instance = tank;
             m_Shops[i].m_PlayerNumber = i + 1;
-            m_Shops[i].Setup();
         }
     }
 
@@ -339,10 +338,11 @@ public class RoundMatchManager : MonoBehaviour
     {
         foreach (ShopManager manager in m_Shops)
         {
-            if (Input.GetKeyDown(manager.m_Code))
+            if (Input.GetKeyDown(manager.m_KeyCode))
             {
                 // .. open the canvas
-                Debug.Log("Open Shop for player ...");
+                Debug.Log($"Open Shop for player {manager.m_PlayerNumber}");
+                gameObject.GetComponent<ShopController>().Toggle(manager.m_Instance);
             }    
         }     
     }
