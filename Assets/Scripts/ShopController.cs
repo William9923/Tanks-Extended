@@ -12,6 +12,7 @@ public class ShopController : MonoBehaviour
     private bool isOpened;
     [HideInInspector] public GameObject m_Instance;
     private TankMoney money;
+    private TankWeapon weapon;
     
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class ShopController : MonoBehaviour
         isOpened = false;
         m_ShopMenu.SetActive(isOpened);
         myEventSystem = GameObject.Find("EventSystem");
+
         
     }
 
@@ -34,6 +36,8 @@ public class ShopController : MonoBehaviour
         buyShellsBtn.onClick.AddListener(buyShells);
         buyChar1Btn.onClick.AddListener(buyChar1);
         buyChar2Btn.onClick.AddListener(buyChar2);
+
+        if (!weapon.IsUpgraded()) buyShellsBtn.interactable = false;
     }
 
     void DestroySetup()
@@ -50,10 +54,11 @@ public class ShopController : MonoBehaviour
         isOpened = !isOpened;
         if (isOpened)
         {
-            Setup();
-            Debug.Log(tank);
             m_Instance = tank;
             money = m_Instance.GetComponent<TankMoney>();
+            weapon = m_Instance.GetComponent<TankWeapon>();
+            Setup();
+
             moneyAmount.text = money.GetMoney().ToString();
         }
         if (!isOpened)
@@ -66,15 +71,19 @@ public class ShopController : MonoBehaviour
 
     void upgradeWeapon()
     {
-        money.BuyItem(3000);
-        Debug.Log("Upgrade gan");
+        
+        money.BuyItem(100);
+        weapon.UpgradeWeapon();
+        upgradeWeaponBtn.interactable = false;
+        buyShellsBtn.interactable = true;
         myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null); //Menghapus state selected
+        
     }
 
     void buyShells()
     {
         money.BuyItem(100);
-        Debug.Log("Buy Shells");
+        weapon.BuyShell();
         myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
     }
 
