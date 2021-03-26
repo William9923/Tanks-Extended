@@ -26,6 +26,8 @@ public class Ammo : MonoBehaviour
         // ... and find their rigidbody.
         Rigidbody targetRigidbody = other.GetComponent<Rigidbody> ();
 
+        targetRigidbody.AddExplosionForce (150.0f, transform.position, m_ExplosionRadius);
+
         // If they don't have a rigidbody, go on to the next collider.
         if (!targetRigidbody)
             return;
@@ -33,15 +35,23 @@ public class Ammo : MonoBehaviour
         // Find the TankHealth script associated with the rigidbody.
         TankHealth targetHealth = targetRigidbody.GetComponent<TankHealth> ();
 
+        // Check also if it a trooper
+        NPCHealth npcHealth = targetRigidbody.GetComponent<NPCHealth> (); 
+
         // If there is no TankHealth script attached to the gameobject, go on to the next collider.
-        if (!targetHealth)
+        if (!targetHealth && !npcHealth)
             return;
         
         // Calculate the amount of damage the target should take based on it's distance from the shell.
         float damage = CalculateDamage (targetRigidbody.position);
 
         // Deal this damage to the tank.
-        targetHealth.TakeDamage (damage);
+        if (targetHealth)
+            targetHealth.TakeDamage (damage);
+
+        // Deal this damage to the npc.
+        if (npcHealth)
+            npcHealth.TakeDamage (damage);
 
         // Destroy the shell.
         Destroy (gameObject);

@@ -135,7 +135,7 @@ public class RoundMatchManager : MonoBehaviour
         if (m_GameWinner != null)
         {
             // If there is a game winner, restart the level.
-            Application.LoadLevel (Application.loadedLevel);
+            SceneManager.LoadScene(0); // Main Menu scene
         }
         else
         {

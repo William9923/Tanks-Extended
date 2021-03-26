@@ -1,7 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CountdownManager : MonoBehaviour
 {
@@ -133,6 +133,8 @@ public class CountdownManager : MonoBehaviour
         // Once execution has returned here, run the 'RoundEnding' coroutine, again don't return until it's finished.
         yield return StartCoroutine (RoundEnding());
 
+        // After Game, back to the Main Menu
+        SceneManager.LoadScene(0); // Main Menu scene
     }
 
 

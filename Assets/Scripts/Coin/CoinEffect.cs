@@ -31,16 +31,21 @@ public class CoinEffect : MonoBehaviour
         // Find the TargetMoney script associated with the rigidbody.
         TankMoney targetMoney = targetRigidbody.GetComponent<TankMoney> ();
 
-        if (!targetMoney)
+        // Find any NPCFinder Item
+        NPCAgentFinder finder = targetRigidbody.GetComponent<NPCAgentFinder>();
+
+        if (!targetMoney && finder == null)
             return;
 
-        targetMoney.ReceiveMoney(m_Money);
+        if (targetMoney)
+            targetMoney.ReceiveMoney(m_Money);
+
+        if (finder != null) 
+            finder.m_Player.GetComponent<TankMoney>().ReceiveMoney(m_Money);
         
         // Play audio effect for getting money
         m_CoinsAudio.Play();
-
         Destroy (gameObject);
-
     }
 
     public void ChangeValue(int value)

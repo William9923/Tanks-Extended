@@ -47,12 +47,18 @@ public class ShootingShell : MonoBehaviour
         // The slider should have a default value of the minimum launch force.
         m_AimSlider.value = m_MinLaunchForce;
 
+        // Checking shell count in a tank
+        TankWeapon weapon = GetComponent<TankWeapon>();
+        if (weapon.ShellCount <= 0)
+            return; 
+
         // If the max force has been exceeded and the shell hasn't yet been launched...
         if (m_CurrentLaunchForce >= m_MaxLaunchForce && !m_Fired)
         {
             // ... use the max force and launch the shell.
             m_CurrentLaunchForce = m_MaxLaunchForce;
             Fire ();
+            weapon.ShellCount--; // minus the number of shell
         }
         // Otherwise, if the fire button has just started being pressed...
         else if (Input.GetButtonDown (m_FireButton))
@@ -78,13 +84,13 @@ public class ShootingShell : MonoBehaviour
         {
             // ... launch the shell.
             Fire ();
+            weapon.ShellCount--; // minus the number of shell
         }
     }
 
 
     public void Fire ()
     {
-        Debug.Log("Shell Fired!");
         // Set the fired flag so only Fire is only called once.
         m_Fired = true;
 

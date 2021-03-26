@@ -18,7 +18,7 @@ public class TankWeapon : MonoBehaviour {
 
     private string m_ToggleWeaponButton;
 
-    private int ShellCount;
+    public int ShellCount;
     private bool Upgraded = false;
                 
     private void Start ()
@@ -66,22 +66,21 @@ public class TankWeapon : MonoBehaviour {
 
     private void ChangeWeapon()
     {
-        if (Upgraded)
+        if (!Upgraded) 
         {
-            switch (m_CurrentWeapon)
-            {
-                case Weapon.SHELL:
-                    m_CurrentWeapon = Weapon.AMMO;
-                    break;
-                case Weapon.AMMO:
-                    m_CurrentWeapon = Weapon.SHELL;
-                    break;
-            }
+            Debug.Log("Need Upgrade");
+            return;
         }
-
-        else
+        
+        // Changing weapon logic
+        switch (m_CurrentWeapon)
         {
-            Debug.Log("Upgrade dulu boi");
+            case Weapon.SHELL:
+                m_CurrentWeapon = Weapon.AMMO;
+                break;
+            case Weapon.AMMO:
+                m_CurrentWeapon = Weapon.SHELL;
+                break;
         }
         
     }
@@ -104,7 +103,7 @@ public class TankWeapon : MonoBehaviour {
     public void BuyShell()
     {
         ShellCount += 1;
-        Debug.Log("Shell ada " + ShellCount);
+        Debug.Log("Current Shell : " + ShellCount);
     }
 
     public void UpgradeWeapon()
