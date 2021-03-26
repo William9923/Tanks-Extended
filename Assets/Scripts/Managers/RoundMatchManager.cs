@@ -195,8 +195,8 @@ public class RoundMatchManager : MonoBehaviour
         // Stop tanks from moving.
         DisableTankControl ();
 
-        // Reset unused coins
-        ResetUnusedCoins();
+        // Delete from scene unused coins
+        DeleteUnusedCoins();
 
         // Clear the winner from the previous round.
         m_RoundWinner = null;
@@ -316,6 +316,14 @@ public class RoundMatchManager : MonoBehaviour
         }
     }
 
+    private void DeleteUnusedCoins()
+    {
+        for (int i = 0; i < m_CurrentCoinsInPlay; i++)
+        {
+            (m_Coins[i] as CoinManager).Delete();
+        }
+    }
+
 
     private void EnableTankControl()
     {
@@ -341,7 +349,6 @@ public class RoundMatchManager : MonoBehaviour
             if (Input.GetKeyDown(manager.m_KeyCode))
             {
                 // .. open the canvas
-                Debug.Log($"Open Shop for player {manager.m_PlayerNumber}");
                 gameObject.GetComponent<ShopController>().Toggle(manager.m_Instance);
             }    
         }     
