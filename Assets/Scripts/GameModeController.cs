@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameModeController : MonoBehaviour
 {
-    public Button map1Button, map2Button, mode1Button, mode2Button, playButton;
-    public int selectedMap;
-    public int selectedMode;
+    private Button map1Button, map2Button, mode1Button, mode2Button, playButton;
+    private int selectedMap;
+    private int selectedMode;
     // Start is called before the first frame update
     void Start()
     {
