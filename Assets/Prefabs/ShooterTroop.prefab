@@ -272,7 +272,8 @@ MonoBehaviour:
   m_NPCAnimation: {fileID: 5558561993286757079}
   m_Ammo: {fileID: 6496952812798707071, guid: 98aa6ca1d6f456145888066b463e64e1, type: 3}
   m_FireTransform: {fileID: 5731304061625166731}
-  m_DelayAmmo: 0.3
+  m_DelayAmmo: 0.5
+  isShooting: 0
 --- !u!54 &7029565800051278735
 Rigidbody:
   m_ObjectHideFlags: 0
