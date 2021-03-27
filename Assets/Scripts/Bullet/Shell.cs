@@ -41,21 +41,25 @@ public class Shell : MonoBehaviour
 
             // Check also if it a trooper
             NPCHealth npcHealth = targetRigidbody.GetComponent<NPCHealth> (); 
-
+            Debug.Log(i);
             // If there is no TankHealth script attached to the gameobject, go on to the next collider.
             if (!targetHealth && !npcHealth)
-                return;
+                continue;
 
             // Calculate the amount of damage the target should take based on it's distance from the shell.
             float damage = CalculateDamage (targetRigidbody.position);
-
+            Debug.Log($"Damage : {damage}");
             // Deal this damage to the tank.
-            if (targetHealth)
+            if (targetHealth) 
                 targetHealth.TakeDamage (damage);
 
             // Deal this damage to the npc.
             if (npcHealth)
+            {
+                Debug.Log("Hit NPC");
                 npcHealth.TakeDamage (damage);
+            }
+                
         }
 
         // Unparent the particles from the shell.

@@ -38,7 +38,7 @@ public class NPCHealth : MonoBehaviour
         m_NPCAnimation.SetTrigger("dead");
 
         // Destroy this game object
-        Destroy(gameObject, 0.75f);
+        Destroy(gameObject, 3.0f);
     }
 
 

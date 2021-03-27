@@ -21,6 +21,14 @@ public class CoinEffect : MonoBehaviour
             return;
         }
 
+        // .. check if it was obstacle
+        if (other.gameObject.layer == 11)
+        {
+            // Reposition
+            transform.position = GetRandomInField();
+            return;
+        }
+
         // ... and find their rigidbody.
         Rigidbody targetRigidbody = other.GetComponent<Rigidbody> ();
 
@@ -55,5 +63,10 @@ public class CoinEffect : MonoBehaviour
             throw new Exception("Cannot use negative value for bonus reward");
         }
         m_Money = value;
+    }
+
+    private Vector3 GetRandomInField() 
+    {
+        return new Vector3(UnityEngine.Random.Range(-20, 20), 6f, UnityEngine.Random.Range(-20, 20));
     }
 }

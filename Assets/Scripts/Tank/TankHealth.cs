@@ -23,6 +23,8 @@ public class TankHealth : MonoBehaviour
         m_ExplosionAudio = m_ExplosionParticles.GetComponent<AudioSource>();
 
         m_ExplosionParticles.gameObject.SetActive(false);
+
+        GetComponent<Rigidbody>().mass = 100;
     }
 
 

@@ -198,6 +198,9 @@ public class RoundMatchManager : MonoBehaviour
         // Delete from scene unused coins
         DeleteUnusedCoins();
 
+        // Remove any NPC
+        DestroyAllNPC();
+
         // Clear the winner from the previous round.
         m_RoundWinner = null;
 
@@ -352,5 +355,14 @@ public class RoundMatchManager : MonoBehaviour
                 gameObject.GetComponent<ShopController>().Toggle(manager.m_Instance);
             }    
         }     
+    }
+
+    void DestroyAllNPC()
+    {   
+        GameObject[] npcs = GameObject.FindGameObjectsWithTag("NPC");
+        foreach (GameObject npc in npcs)
+        {
+            Destroy(npc);
+        }
     }
 }

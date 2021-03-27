@@ -69,7 +69,7 @@ public class ShopController : MonoBehaviour
 
     void UpgradeWeapon()
     {
-        money.BuyItem(100);
+        // money.BuyItem(3000);
         weapon.UpgradeWeapon();
         upgradeWeaponBtn.interactable = false;
         buyShellsBtn.interactable = true;
@@ -79,7 +79,7 @@ public class ShopController : MonoBehaviour
 
     void BuyShells()
     {
-        money.BuyItem(100);
+        // money.BuyItem(100);
         weapon.BuyShell();
         myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
     }
