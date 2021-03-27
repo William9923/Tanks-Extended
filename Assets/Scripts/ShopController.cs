@@ -113,15 +113,13 @@ public class ShopController : MonoBehaviour
 
     void InitShootingTroop()
     {
-        Vector3 troopPosition = new Vector3(m_Instance.transform.position.x,m_Instance.transform.position.y,m_Instance.transform.position.z - 2f);
-        GameObject shooterTroop = Instantiate(m_ShootingTroopPrefab, troopPosition, m_Instance.transform.rotation) as GameObject;
+        GameObject shooterTroop = Instantiate(m_ShootingTroopPrefab, m_Instance.GetComponent<TankNPCHandler>().m_TroopLocation.position, m_Instance.transform.rotation) as GameObject;
         shooterTroop.GetComponent<NPCAgentShooter>().m_Player = m_Instance;
     }
 
     void InitCollectorTroop()
     {
-        Vector3 troopPosition = new Vector3(m_Instance.transform.position.x,m_Instance.transform.position.y,m_Instance.transform.position.z - 2f);
-        GameObject shooterTroop = Instantiate(m_CollectorTroopPrefab, troopPosition, m_Instance.transform.rotation) as GameObject;
+         GameObject shooterTroop = Instantiate(m_CollectorTroopPrefab, m_Instance.GetComponent<TankNPCHandler>().m_TroopLocation.position, m_Instance.transform.rotation) as GameObject;
         shooterTroop.GetComponent<NPCAgentFinder>().m_Player = m_Instance;
     }
 }

@@ -25,12 +25,11 @@ public class Ammo : MonoBehaviour
     {
         // ... and find their rigidbody.
         Rigidbody targetRigidbody = other.GetComponent<Rigidbody> ();
-
-        targetRigidbody.AddExplosionForce (150.0f, transform.position, m_ExplosionRadius);
-
         // If they don't have a rigidbody, go on to the next collider.
         if (!targetRigidbody)
             return;
+
+        targetRigidbody.AddExplosionForce (10.0f, transform.position, m_ExplosionRadius);
 
         // Find the TankHealth script associated with the rigidbody.
         TankHealth targetHealth = targetRigidbody.GetComponent<TankHealth> ();

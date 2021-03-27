@@ -47,8 +47,7 @@ public class ShootingAmmo : MonoBehaviour
             Instantiate (m_Ammo, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
         
         // Set the shell's velocity to the launch force in the fire position's forward direction.
-        ammoInstance.velocity = 30f *  m_FireTransform.forward;
-        
+        ammoInstance.velocity = 30f *  m_FireTransform.forward; 
     }
 
 }
