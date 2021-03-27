@@ -1,5 +1,7 @@
 # IF3210 2021 Unity K03 15: Tanks II (EXtended)
 ---
+## Version Unity : 2019.4.20f1 
+
 ## Deskripsi
 Tanks II (EXtended) merupakan suatu game dimana pemain akan memainkan tanks dan melawan satu sama lain dengan menggunakan senjata dan troops yang ada. Pada game ini, pemain akan bermain dalam 3 ronde. Pemain yang memenangkan paling banyak ronde yang akan memenangkan permainan (battle royale). Pemain akan disenjatai dengan machine gun sebagai senjata default. Saat permainan, cash akan berjatuhan secara periodik dan pemain akan mendapatkan cash ketika badan Tank pemain bersentuhan dengan cash di field. Pemain dapat mengakses Shop untuk meng-upgrade senjata yang dimiliki tank menjadi shell yang dapat meledak dengan cash yang telah didapat, namun shell memiliki jumlah yang terbatas sehingga perlu digunakan di saat yang tepat. Selain itu, pemain juga dapat menyewa troops untuk 1 ronde menggunakan cash yang didapatkan. Troops yang tersedia dibagi menjadi 2, yaitu CashFinder untuk membantu mencari Cash bagi pemain, dan ShooterSoldier untuk membantu pemain menyerang musuh. Tidak hanya itu, pemain juga dapat mengganti preferensi nama pemain serta besar suara game pada lobby main menu (bagian Option).
 
