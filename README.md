@@ -106,9 +106,8 @@ Berikut penggunaan library eksternal pada game :
 | 8  | Membuat dokumentasi |
 
 * 13516060 - Gloryanson Ginting
-| No | Kontribusi   |
-|----|------------  |
-| 1  | -            |
+
+Tidak ada
 
 
 
