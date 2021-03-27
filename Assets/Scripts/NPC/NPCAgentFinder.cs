@@ -37,7 +37,7 @@ public class NPCAgentFinder : NPCMoving {
         // If no coin is in radius
         if ((nearestCoinDistance == 999f) || (nearestCoin == null))
         {
-            if (playerDistance >= 1)
+            if (playerDistance >= 5)
             {
                 transform.LookAt(m_Player.transform);
                 m_NPCAgent.SetDestination(m_Player.transform.position);
