@@ -24,13 +24,17 @@ Berikut cara kerja dari beberapa fungsionalitas dalam game :
 Berikut beberapa screenshot in-game saat bermain game mode :
 
 ### Main Menu / Lobby
-
+![Main Menu](docs/mainmenu.jpg)
 ### Option
-
+![Option Menu](docs/optionmenu.jpg)
 ### Map Snow
+Start snow map:
+![Snow Map Start](docs/roundstart_snow.jpg)
 
+Snow Map Win Condition
+![Snow Map Win](docs/round_end_time_snow.jpg)
 ### Map Dessert
-
+![Main Menu](docs/mainmenu.jpg)
 ### Shop
 Tampilan Shop sebelum player mengupgrade weapon : 
 ![Shop Before Upgrade](docs/shop1.jpg)
@@ -39,15 +43,28 @@ Tampilan Shop setelah player mengupgrade weapon :
 ![Shop After Upgrade](docs/shop2.jpg)
 
 ### Weapon
+Senjata pertama dari tank, yaitu cannon yang menembakkan shell:
+![Shell Shooter](docs/weapon1.jpg)
+
+Senjata kedua dari tank, yaitu machine gun yang menembakkan peluru:
+![Machine Gun](docs/weapon2.jpg)
 
 ### Game Mode
+Tampilan saat player memilih mode game :
+![Choose Game Mode](docs/gamemenu.jpg)
 
+Tampilan game battle royale :
+![Battle Royale](docs/roundstart_desert.jpg)
+
+Tampilan game time attack :
+![Time Attack](docs/roundstart_time_snow.jpg)
 ### Coin Finder
+Non-Player Character yang berjalan di sekitar arena dan mengambil koin terdekat
+![Shooter Troop](docs/coincollector.jpg)
 
 ### Shooter Troop
-
-### Cash 
-
+Non-Player Character yang menembak tank lawan yang ada di rangenya
+![Shooter Troop](docs/shooter.jpg)
 
 ## Library External
 
@@ -72,8 +89,8 @@ Berikut penggunaan library eksternal pada game :
 | 7  | Membuat map yang berbeda dari tutorial (map dessert dan snowy area) | 
 | 8  | Membuat object cash yang muncul (berjatuhan) secara periodik | 
 | 9  | Membuat senjata machine gun pada game (default weapon) |
-| 10  | Membuat game mode time limit rush (persaingan siapa mendapat paling banyak cash dalam 60 detik) |
-| 11  | Mencoba membuat multiplayer dengan Mirror (tidak berhasil seutuhnya) |
+| 10 | Membuat game mode time limit rush (persaingan siapa mendapat paling banyak cash dalam 60 detik) |
+| 11 | Mencoba membuat multiplayer dengan Mirror (tidak berhasil seutuhnya) |
 
 * 13518144 - Fabianus Harry Setiawan
 
@@ -86,6 +103,12 @@ Berikut penggunaan library eksternal pada game :
 | 5  | Membuat credits untuk asset yang dipakai dalam game |
 | 6  | Melakukan Playtesting terhadap game secara menyeluruh |
 | 7  | Mengimplementasikan efek pada weapon machine gun |
+| 8  | Membuat dokumentasi |
+
+* 13516060 - Gloryanson Ginting
+| No | Kontribusi   |
+|----|------------  |
+| 1  | -            |
 
 
 
