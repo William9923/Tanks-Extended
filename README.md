@@ -9,7 +9,7 @@ Sebagai tambahan, map yang terdapat pada game ini dibagi menjadi 2, yaitu Desser
 Berikut cara kerja dari beberapa fungsionalitas dalam game : 
 | No | Spesifikasi | Penjelasan |
 |----|-------------|------------|
-| 1  | Multiplayer dapat dijalankan secara local area network dengan lebih dari dua pemain. Implementasi matchmaking (lobby) dibebaskan. | Multiplayer diimplementasikan dengan menggunakan client authority dengan library Mirror, namun belum terimplementasi dengan baik sehingga game hanya menggunakan sistem multiplayer support 2 player dengan keyboard yang sama. (Branch feature/networking).   |
+| 1  | Multiplayer dapat dijalankan secara local area network dengan lebih dari dua pemain. Implementasi matchmaking (lobby) dibebaskan. | Multiplayer diimplementasikan dengan menggunakan client authority dengan library Mirror, namun belum terimplementasi dengan baik akibat kurangnya waktu sehingga game hanya menggunakan sistem multiplayer support 2 player dengan keyboard yang sama. Sampel multiplayer dapat dilihat pada Branch feature/networking.   |
 | 2  | Pada main menu, terdapat settings untuk mengatur intensitas suara dan nama pemain yang diimplementasi dengan PlayerPrefs.            | Terdapat Main Meny yang bisa digunakan untuk mengatur nama pemain 1 dan pemain 2 serta pengaturan suara pada opsi Option sebelum memilih Map dan Game Mode.|
 | 3  | Desain pada map harus berbeda dari desain semula pada tutorial namun dapat menggunakan aset apapun.            | Map baru yang ditambahkan terdapat 2, yaitu Map Dessert (menyerupai Map pada tutorial namun dengan perubahan asset serta layout) dan Map Snowy yang merubah material asset menjadi salju           |
 | 4  | Terdapat objek cash yang muncul secara periodik. Tank dapat mengambil cash untuk menambahkan uang yang dimilikinya.            | Object Cash bermunculan secara periodik dengan jatuh secara ke map pada daerah random, direpresentasikan dengan coin berwarna abu - abu. Cash ini dibuat secara custom dan nantinya bisa digunakan untuk upgrade weapon dan untuk membeli shell pada game mode battle royale. Sementara itu, pada game mode Time Attack, Cash yang bermunculan secara periodik digunakan untuk point player.           |
@@ -52,13 +52,40 @@ Tampilan Shop setelah player mengupgrade weapon :
 ## Library External
 
 Berikut penggunaan library eksternal pada game :
+- [Tanks!](https://assetstore.unity.com/packages/essentials/tutorial-projects/tanks-tutorial-46209) : Digunakan sebagai 
 - [ToonyTinyPeople](https://assetstore.unity.com/packages/3d/characters/toony-tiny-soldiers-demo-180904) : Digunakan untuk membuat karakter troops / infrantry serta untuk membuat animasi (package memiliki animation clip) dalam pembuatan animator controller (dengan state diagram)
 - [Tanks! Reference](https://assetstore.unity.com/packages/essentials/tutorial-projects/tanks-reference-project-80165) : Digunakan untuk mendapatkan asset - asset terkait, seperti pohon salju dan prefab lainnya untuk pembuatan level Art untuk map snow dan dessert.
 - [Mirror](https://assetstore.unity.com/packages/tools/network/mirror-129321) : Digunakan untuk membuat multiplayer pada game (belum berhasil diimplementasikan namun sudah diimport dalam project) 
 
 ## Pembagian Kerja
 
-Berikut merupakan pembagian kerja dalam pembuatan game Tanks II (EXtended):
+* 13518138 - William
+
+| No | Kontribusi |
+|----|------------|
+| 1  | Membuat map yang berbeda dari tutorial (map dessert dan snowy area) | 
+| 2  | Membuat object cash yang muncul (berjatuhan) secara periodik | 
+| 3  | Membuat senjata machine gun pada game (default weapon) |
+| 4  | Membuat karakter dengan karakteristik (logic pathfinding) Shooter Troop | 
+| 5  | Membuat logic colliding karakter dengan tank | 
+| 6  | Membuat animator controller untuk karakter (troop) dalam game |
+| 7  | Membuat map yang berbeda dari tutorial (map dessert dan snowy area) | 
+| 8  | Membuat object cash yang muncul (berjatuhan) secara periodik | 
+| 9  | Membuat senjata machine gun pada game (default weapon) |
+| 10  | Membuat game mode time limit rush (persaingan siapa mendapat paling banyak cash dalam 60 detik) |
+| 11  | Mencoba membuat multiplayer dengan Mirror (tidak berhasil seutuhnya) |
+
+* 13518144 - Fabianus Harry Setiawan
+
+| No | Kontribusi |
+|----|------------|
+| 1  | Membuat tampilan main menu |
+| 2  | Membuat tampilan shop |
+| 3  | Membuat logic shop dan upgrade weapon |
+| 4  | Membuat karakter dengan karakteristik (logic pathfinding) Cash Finder |
+| 5  | Membuat credits untuk asset yang dipakai dalam game |
+| 6  | Melakukan Playtesting terhadap game secara menyeluruh |
+| 7  | Mengimplementasikan efek pada weapon machine gun |
 
 
 
