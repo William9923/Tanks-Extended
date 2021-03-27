@@ -31,7 +31,7 @@ Berikut beberapa screenshot in-game saat bermain game mode :
 ![Snow Map Start](docs/roundstart_snow.jpg)
 
 ### Map Dessert
-![Main Menu](docs/mainmenu.jpg)
+![Map Dessert](docs/roundstart_desert.jpg)
 
 ### Shop
 Tampilan Shop sebelum player mengupgrade weapon : 
@@ -76,10 +76,11 @@ Non-Player Character yang menembak tank lawan yang ada di rangenya
 
 ### Lobby Multiplayer
 Berikut merupakan tampilan lobby pada multiplayer dengan LAN (Local Area Network) :
-Lobby kosong
+
+* Lobby kosong
 ![LAN Lobby](docs/lobby.jpg)
 
-Lobby dengan 2 pemain yang tersambung dengan LAN:
+* Lobby dengan 2 pemain yang tersambung dengan LAN:
 ![LAN Lobby 2](docs/lobby2.jpg)
 
 ## Library External
