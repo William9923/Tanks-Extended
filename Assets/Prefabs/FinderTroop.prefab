@@ -335,6 +335,10 @@ MonoBehaviour:
   m_AllowedDistance: 10
   m_NPCAgent: {fileID: 625642550}
   m_NPCAnimation: {fileID: 8376344924089442314}
+  m_CoinMask:
+    serializedVersion: 2
+    m_Bits: 513
+  m_NPCRadius: 10
 --- !u!114 &625642548
 MonoBehaviour:
   m_ObjectHideFlags: 0
