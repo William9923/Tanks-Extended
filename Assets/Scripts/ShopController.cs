@@ -69,7 +69,7 @@ public class ShopController : MonoBehaviour
 
     void UpgradeWeapon()
     {
-        // money.BuyItem(3000);
+        money.BuyItem(3000);
         weapon.UpgradeWeapon();
         upgradeWeaponBtn.interactable = false;
         buyShellsBtn.interactable = true;
@@ -79,15 +79,14 @@ public class ShopController : MonoBehaviour
 
     void BuyShells()
     {
-        // money.BuyItem(100);
+        money.BuyItem(100);
         weapon.BuyShell();
         myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
     }
 
     void BuyCollectorTroop()
     {
-        // TODO : Implement harga once done debugging
-        // money.BuyItem(1000);
+        money.BuyItem(1000);
         Debug.Log("Buy Collector Troop");
         InitCollectorTroop();
         myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
@@ -95,8 +94,7 @@ public class ShopController : MonoBehaviour
 
     void BuyShootingTroop()
     {
-        // TODO : Implement harga once done debugging
-        // money.BuyItem(1500);
+        money.BuyItem(1500);
         Debug.Log("Buy Shooting Troop");
         InitShootingTroop();
         myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);

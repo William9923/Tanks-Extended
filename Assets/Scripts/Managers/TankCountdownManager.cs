@@ -15,7 +15,7 @@ public class TankCountdownManager
 
     private TankMovement m_Movement;
     private TankRespawn m_Respawn;       
-    private TankWeapon m_Weapon;
+    private TankWeaponCountdown m_Weapon;
     private GameObject m_CanvasGameObject;
     private int m_CurrMoney;
     private string playerName;
@@ -24,7 +24,7 @@ public class TankCountdownManager
     {
         m_PlayerColor = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
         m_Movement = m_Instance.GetComponent<TankMovement>();
-        m_Weapon = m_Instance.GetComponent<TankWeapon>();
+        m_Weapon = m_Instance.GetComponent<TankWeaponCountdown>();
         m_Respawn = m_Instance.GetComponent<TankRespawn>();
 
         m_Respawn.m_RespawnPoint = m_SpawnPoint;    
