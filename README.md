@@ -34,10 +34,10 @@ Berikut beberapa screenshot in-game saat bermain game mode :
 
 ### Shop
 Tampilan Shop sebelum player mengupgrade weapon : 
-![Shop Before Upgrade](./docs/shop1.png)
+![Shop Before Upgrade](https://gitlab.informatika.org/William9923/IF3210-2021-Unity-K03-15/-/tree/develop/docs/shop1.png)
 
 Tampilan Shop setelah player mengupgrade weapon : 
-![Shop After Upgrade](./docs/shop2.png)
+![Shop After Upgrade](https://gitlab.informatika.org/William9923/IF3210-2021-Unity-K03-15/-/tree/develop/docs/shop2.png)
 
 ### Weapon
 
