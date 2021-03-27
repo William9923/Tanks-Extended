@@ -29,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574299389946617043}
-  m_LocalRotation: {x: -0.69833106, y: 0.06550139, z: 0.71004313, w: 0.06230623}
+  m_LocalRotation: {x: 0.49277297, y: -0.49990407, z: -0.50133604, w: -0.5058982}
   m_LocalPosition: {x: -3.104, y: 5.624, z: -8.959}
   m_LocalScale: {x: 1, y: 0.042303428, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -10.372001, y: -449.063, z: 540.175}
+  m_LocalEulerAnglesHint: {x: -88.93001, y: -321.153, z: 51.300003}
 --- !u!33 &574299389946617040
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2108d8603f3bd8a4889e438479b3fd2d, type: 2}
+  - {fileID: 2100000, guid: 7cd9d214f079a4c989f0b66a62a3e527, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,7 +129,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   m_CoinsAudio: {fileID: 7288774404534457163}
-  m_GetCoinsSound: {fileID: 8300000, guid: bfd2849bba06c4b4db3600baadc2aabb, type: 3}
   m_Money: 100
   m_HitRadius: 2
 --- !u!82 &7288774404534457163
