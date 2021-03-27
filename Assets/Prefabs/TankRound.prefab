@@ -1,5 +1,48 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3739522231506290505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3755962719509855478}
+  m_Layer: 9
+  m_Name: TroopTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3755962719509855478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3739522231506290505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -3.79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4215708143691158373}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1112297242511077255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4215708143691158372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ba94df5158aaf45883ddb4350fe4c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TroopLocation: {fileID: 3755962719509855478}
 --- !u!1001 &5903299026977230018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115,6 +158,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6462905484708878641, guid: f3c6e5a76f7547d459af5cd8115a530e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f3c6e5a76f7547d459af5cd8115a530e, type: 3}
+--- !u!1 &4215708143691158372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7741000601937239974, guid: f3c6e5a76f7547d459af5cd8115a530e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5903299026977230018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4215708143691158373 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7741000601937239975, guid: f3c6e5a76f7547d459af5cd8115a530e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5903299026977230018}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5905570696970617850 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6885634207698744, guid: f3c6e5a76f7547d459af5cd8115a530e,

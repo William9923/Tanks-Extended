@@ -5,9 +5,8 @@ using UnityEngine.AI;
 [RequireComponent (typeof (Animator))]
 public class NPCMoving : MonoBehaviour
 {
-       
     // Target to detect
-    [HideInInspector] public GameObject m_Player; // TODO : Dijadiin private, instantiate on runtime [HideOnInspector]
+    [HideInInspector] public GameObject m_Player; 
     
     // NPC properties
     public float m_AllowedDistance;
@@ -37,7 +36,6 @@ public class NPCMoving : MonoBehaviour
         {
             m_NPCAgent.SetDestination(m_Player.transform.position);
             m_NPCAnimation.SetTrigger("moving");
-
         }
         else 
         {
@@ -47,7 +45,5 @@ public class NPCMoving : MonoBehaviour
             // Play Idle Animation
             m_NPCAnimation.ResetTrigger("moving");
         }
-
     }
-    
 }
