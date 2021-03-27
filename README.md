@@ -28,13 +28,11 @@ Berikut beberapa screenshot in-game saat bermain game mode :
 ### Option
 ![Option Menu](docs/optionmenu.jpg)
 ### Map Snow
-Start snow map:
 ![Snow Map Start](docs/roundstart_snow.jpg)
 
-Snow Map Win Condition
-![Snow Map Win](docs/round_end_time_snow.jpg)
 ### Map Dessert
 ![Main Menu](docs/mainmenu.jpg)
+
 ### Shop
 Tampilan Shop sebelum player mengupgrade weapon : 
 ![Shop Before Upgrade](docs/shop1.jpg)
@@ -56,8 +54,15 @@ Tampilan saat player memilih mode game :
 Tampilan game battle royale :
 ![Battle Royale](docs/roundstart_desert.jpg)
 
+Tampilan game saat menang battle royale:
+![Battle Royale 2](docs/battle-royale-win.jpg)
+
 Tampilan game time attack :
 ![Time Attack](docs/roundstart_time_snow.jpg)
+
+Tampilan game saat menang time attack : 
+![Time Attack 2](docs/round_end_time_snow.jpg)
+
 ### Coin Finder
 Non-Player Character yang berjalan di sekitar arena dan mengambil koin terdekat
 ![Shooter Troop](docs/coincollector.jpg)
@@ -65,6 +70,17 @@ Non-Player Character yang berjalan di sekitar arena dan mengambil koin terdekat
 ### Shooter Troop
 Non-Player Character yang menembak tank lawan yang ada di rangenya
 ![Shooter Troop](docs/shooter.jpg)
+
+### Credit
+![Credit](docs/credits.jpg)
+
+### Lobby Multiplayer
+Berikut merupakan tampilan lobby pada multiplayer dengan LAN (Local Area Network) :
+Lobby kosong
+![LAN Lobby](docs/lobby.jpg)
+
+Lobby dengan 2 pemain yang tersambung dengan LAN:
+![LAN Lobby 2](docs/lobby2.jpg)
 
 ## Library External
 
