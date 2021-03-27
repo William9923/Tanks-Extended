@@ -25,7 +25,7 @@ public class NPCMoving : MonoBehaviour
         m_NPCAnimation.SetTrigger("moving");
     }
 
-    protected virtual void Update() 
+    public virtual void Update() 
     {
 
         transform.LookAt(m_Player.transform);
