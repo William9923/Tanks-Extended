@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Ammo : MonoBehaviour
 {
-    public LayerMask m_TankMask;                     
+    public LayerMask m_TankMask;
+    public ParticleSystem m_ExplosionParticles;
     public float m_Damage = 50f;                  
     public float m_ExplosionRadius = 2f;        
       
@@ -52,8 +53,18 @@ public class Ammo : MonoBehaviour
         if (npcHealth)
             npcHealth.TakeDamage (damage);
 
+        m_ExplosionParticles.transform.parent = null;
+
+        // Play the particle system.
+        m_ExplosionParticles.Play();
+
+
+        // // Once the particles have finished, destroy the gameobject they are on.
+        Destroy(m_ExplosionParticles.gameObject, m_ExplosionParticles.main.duration);
+
+
         // Destroy the shell.
-        Destroy (gameObject);
+        Destroy(gameObject);
     }
 
 
