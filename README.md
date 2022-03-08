@@ -1,132 +1,201 @@
-# IF3210 2021 Unity K03 15: Tanks II (EXtended)
+<p align="center">
+    <img src="docs/mainmenu.jpg" width="360" alt="Working Out">
+    <h2 align="center">Tanks!Extended</h2>
+</p> 
+<p align="center">A 3D platformer shooting game with simple game mechanics but double the fun</b></p>
 
-## Version Unity : 2019.4.20f1 
+> Remember the old time of simple platform games? Where you simply want to play to kill some time when holiday/free time during works?
 
-## Deskripsi
-Tanks II (EXtended) merupakan suatu game dimana pemain akan memainkan tanks dan melawan satu sama lain dengan menggunakan senjata dan troops yang ada. Pada game ini, pemain akan bermain dalam 3 ronde. Pemain yang memenangkan paling banyak ronde yang akan memenangkan permainan (battle royale). Pemain akan disenjatai dengan machine gun sebagai senjata default. Saat permainan, cash akan berjatuhan secara periodik dan pemain akan mendapatkan cash ketika badan Tank pemain bersentuhan dengan cash di field. Pemain dapat mengakses Shop untuk meng-upgrade senjata yang dimiliki tank menjadi shell yang dapat meledak dengan cash yang telah didapat, namun shell memiliki jumlah yang terbatas sehingga perlu digunakan di saat yang tepat. Selain itu, pemain juga dapat menyewa troops untuk 1 ronde menggunakan cash yang didapatkan. Troops yang tersedia dibagi menjadi 2, yaitu CashFinder untuk membantu mencari Cash bagi pemain, dan ShooterSoldier untuk membantu pemain menyerang musuh. Tidak hanya itu, pemain juga dapat mengganti preferensi nama pemain serta besar suara game pada lobby main menu (bagian Option).
+**Introducing**...
 
-Sebagai tambahan, map yang terdapat pada game ini dibagi menjadi 2, yaitu Dessert Map dan Snowy Map. Kedua map tersebut memberikan tantangan tersendiri bagi pemain. Tidak hanya itu, game ini juga disertai dengan game mode tambahan Countdown time money race, dimana pemain akan bersaing untuk mendapatkan cash paling banyak. Pemain yang mati juga akan langsung respawn (dengan timer tertentu), sehingga game mode ini lebih diarahkan untuk mode "have fun" bagi pemain - pemain Tanks II (EXtended)
+An offline 3D shooting platform game that have variety of game modes. Each game modes can be played in less than 3-5 minutes. Not only that, currently the game also supports 2 maps (rocky mountain and snowy area).
 
-## Cara Kerja (Fungsionalitas Game) & Screenshot
-Berikut cara kerja dari beberapa fungsionalitas dalam game : 
-| No | Spesifikasi | Penjelasan |
-|----|-------------|------------|
-| 1  | Multiplayer dapat dijalankan secara local area network dengan lebih dari dua pemain. Implementasi matchmaking (lobby) dibebaskan. | Multiplayer diimplementasikan dengan menggunakan client authority dengan library Mirror, namun belum terimplementasi dengan baik akibat kurangnya waktu sehingga game hanya menggunakan sistem multiplayer support 2 player dengan keyboard yang sama. Sampel multiplayer dapat dilihat pada Branch feature/networking.   |
-| 2  | Pada main menu, terdapat settings untuk mengatur intensitas suara dan nama pemain yang diimplementasi dengan PlayerPrefs.            | Terdapat Main Meny yang bisa digunakan untuk mengatur nama pemain 1 dan pemain 2 serta pengaturan suara pada opsi Option sebelum memilih Map dan Game Mode.|
-| 3  | Desain pada map harus berbeda dari desain semula pada tutorial namun dapat menggunakan aset apapun.            | Map baru yang ditambahkan terdapat 2, yaitu Map Dessert (menyerupai Map pada tutorial namun dengan perubahan asset serta layout) dan Map Snowy yang merubah material asset menjadi salju           |
-| 4  | Terdapat objek cash yang muncul secara periodik. Tank dapat mengambil cash untuk menambahkan uang yang dimilikinya.            | Object Cash bermunculan secara periodik dengan jatuh secara ke map pada daerah random, direpresentasikan dengan coin berwarna abu - abu. Cash ini dibuat secara custom dan nantinya bisa digunakan untuk upgrade weapon dan untuk membeli shell pada game mode battle royale. Sementara itu, pada game mode Time Attack, Cash yang bermunculan secara periodik digunakan untuk point player.           |
-| 5  | Terdapat minimal dua jenis senjata dengan karakteristik yang berbeda. Pemain dapat membeli senjata dengan menggunakan cash.            | Terdapat 2 jenis karakter, yaitu Cash Finder dan Shooter Troop. Cash Finder akan bergerak mencari cash untuk player (bergerak secara independen). Apabila tidak ada cash disekeliling rangenya lagi, ia akan bergerak mengikuti player kembali sebelum mendapatkan cash pada rangenya lagi. Sedangkan Shooter Troop akan bergerak mengikuti pemain, dan menembak setiap pemain lawan yang didalam range tembakan troop.           |
-| 6  | Terdapat minimal dua jenis karakter bergerak yang dapat dikeluarkan (tempat dibebaskan) dengan membayar cash, memiliki behavior yang berbeda, dan dapat diserang dengan peluru. Sebagai referensi, karakter dapat berupa infantry yang berjalan mengikuti pergerakan musuh dan menembak secara periodik.            | Animasi pada CashFinder dan Shooter Troop menggunakan Animator Controller dengan 3 jenis animation clip, yaitu shooting (khusus pada Shooter Troop), moving dan idle.           |
-| 7  | Animasi saat karakter bergerak melakukan aksi (contohnya jalan, tembak, dan diam) harus berbeda, namun dapat menggunakan aset apapun.            | Baik tank dan karakter (troop) memiliki komponen Collider untuk memungkinkan terjadinya collision.           |
-| 8  | Terdapat interaksi collision antara objek bergerak seperti tank dan karakter.            | Terdapat credits pada main menu untuk menampilkan Assets yang digunakan oleh kelompok kami, dan ditampilkan saat pemain akan bermain game.           |
-| 9  | Terdapat lebih dari satu map yang dapat dipilih oleh pemain.            | Pemain dapat memilih 2 jenis map yaitu Map Dessert dan Map Snow.           |
-| 10 | Terdapat lebih dari satu game mode selain battle royale. Sebagai referensi, contoh game mode lain adalah racing atau timed money race.            | Terdapat 2 buah game yang dapat dipilih oleh pemain dalam match lobby (main menu). Game modes yang dapat dipilih adalah Battle Royale dan Time Attack dimana pemain beradu untuk mengumpulkan cash sebanyak - banyaknya dalam 60 detik.           |
+## ✨ Features
 
-## Screenshot Game
-Berikut beberapa screenshot in-game saat bermain game mode :
+- Main Menu / Lobby
+- Cash & Shop System
+- Round-based Mode
+- Time-limited Mode
+- Various Maps
+- Multiple & upgradeable weapons
+- AI based Troops (with unique animations)
+- Game Preference / Settings
+- Credits
+- (Not Stable) LAN-connected multiplayer
 
-### Main Menu / Lobby
-![Main Menu](docs/mainmenu.jpg)
-### Option
-![Option Menu](docs/optionmenu.jpg)
-### Map Snow
-![Snow Map Start](docs/roundstart_snow.jpg)
+### Main Menu
 
-### Map Dessert
-![Map Dessert](docs/roundstart_desert.jpg)
+<table>
+  <tr>
+    <td valign="mid">
+        <img src="docs/mainmenu.jpg" alt="Sports News Portrait" width="200"/>
+    </td>
+    <td valign="mid">
+       <img src="docs/optionmenu.jpg" alt="Sports News Landscape" width="200"/>
+    </td>
+    <td valign="mid">
+    <img src="docs/gamemenu.jpg" alt="Sports News Landscape" width="200"/>
+    </td>
+  </tr>
+  <tr>
+    <td><p align="center">Main Menu</p></td>
+    <td><p align="center">Options</p></td>
+    <td><p align="center">Game Mode</p></td>
+  </tr>
+</table>
 
-### Shop
-Tampilan Shop sebelum player mengupgrade weapon : 
-![Shop Before Upgrade](docs/shop1.jpg)
+### Multiple Maps Support
 
-Tampilan Shop setelah player mengupgrade weapon : 
-![Shop After Upgrade](docs/shop2.jpg)
-
-### Weapon
-Senjata pertama dari tank, yaitu cannon yang menembakkan shell:
-![Shell Shooter](docs/weapon1.jpg)
-
-Senjata kedua dari tank, yaitu machine gun yang menembakkan peluru:
-![Machine Gun](docs/weapon2.jpg)
-
-### Game Mode
-Tampilan saat player memilih mode game :
-![Choose Game Mode](docs/gamemenu.jpg)
-
-Tampilan game battle royale :
-![Battle Royale](docs/roundstart_desert.jpg)
-
-Tampilan game saat menang battle royale:
-![Battle Royale 2](docs/battle-royale-win.jpg)
-
-Tampilan game time attack :
-![Time Attack](docs/roundstart_time_snow.jpg)
-
-Tampilan game saat menang time attack : 
-![Time Attack 2](docs/round_end_time_snow.jpg)
-
-### Coin Finder
-Non-Player Character yang berjalan di sekitar arena dan mengambil koin terdekat
-![Shooter Troop](docs/coincollector.jpg)
-
-### Shooter Troop
-Non-Player Character yang menembak tank lawan yang ada di rangenya
-![Shooter Troop](docs/shooter.jpg)
-
-### Credit
-![Credit](docs/credits.jpg)
-
-### Lobby Multiplayer
-Berikut merupakan tampilan lobby pada multiplayer dengan LAN (Local Area Network) :
-
-* Lobby kosong
-![LAN Lobby](docs/lobby.jpg)
-
-* Lobby dengan 2 pemain yang tersambung dengan LAN:
-![LAN Lobby 2](docs/lobby2.jpg)
-
-## Library External
-
-Berikut penggunaan library eksternal pada game :
-- [Tanks!](https://assetstore.unity.com/packages/essentials/tutorial-projects/tanks-tutorial-46209) : Digunakan sebagai 
-- [ToonyTinyPeople](https://assetstore.unity.com/packages/3d/characters/toony-tiny-soldiers-demo-180904) : Digunakan untuk membuat karakter troops / infrantry serta untuk membuat animasi (package memiliki animation clip) dalam pembuatan animator controller (dengan state diagram)
-- [Tanks! Reference](https://assetstore.unity.com/packages/essentials/tutorial-projects/tanks-reference-project-80165) : Digunakan untuk mendapatkan asset - asset terkait, seperti pohon salju dan prefab lainnya untuk pembuatan level Art untuk map snow dan dessert.
-- [Mirror](https://assetstore.unity.com/packages/tools/network/mirror-129321) : Digunakan untuk membuat multiplayer pada game (belum berhasil diimplementasikan namun sudah diimport dalam project) 
-
-## Pembagian Kerja
-
-* 13518138 - William
-
-| No | Kontribusi |
-|----|------------|
-| 1  | Membuat map yang berbeda dari tutorial (map dessert dan snowy area) | 
-| 2  | Membuat object cash yang muncul (berjatuhan) secara periodik | 
-| 3  | Membuat senjata machine gun pada game (default weapon) |
-| 4  | Membuat karakter dengan karakteristik (logic pathfinding) Shooter Troop | 
-| 5  | Membuat logic colliding karakter dengan tank | 
-| 6  | Membuat animator controller untuk karakter (troop) dalam game |
-| 7  | Membuat map yang berbeda dari tutorial (map dessert dan snowy area) | 
-| 8  | Membuat object cash yang muncul (berjatuhan) secara periodik | 
-| 9  | Membuat senjata machine gun pada game (default weapon) |
-| 10 | Membuat game mode time limit rush (persaingan siapa mendapat paling banyak cash dalam 60 detik) |
-| 11 | Mencoba membuat multiplayer dengan Mirror (tidak berhasil seutuhnya) |
-
-* 13518144 - Fabianus Harry Setiawan
-
-| No | Kontribusi |
-|----|------------|
-| 1  | Membuat tampilan main menu |
-| 2  | Membuat tampilan shop |
-| 3  | Membuat logic shop dan upgrade weapon |
-| 4  | Membuat karakter dengan karakteristik (logic pathfinding) Cash Finder |
-| 5  | Membuat credits untuk asset yang dipakai dalam game |
-| 6  | Melakukan Playtesting terhadap game secara menyeluruh |
-| 7  | Mengimplementasikan efek pada weapon machine gun |
-| 8  | Membuat dokumentasi |
-
-* 13516060 - Gloryanson Ginting
-
-Tidak ada
+<table>
+  <tr>
+    <td valign="mid">
+        <img src="docs/roundstart_snow.jpg" alt="snow" width="200"/>
+    </td>
+    <td valign="mid">
+       <img src="docs/roundstart_desert.jpg" alt="dessert" width="200"/>
+    </td>
+  </tr>
+  <tr>
+    <td><p align="center">Snow</p></td>
+    <td><p align="center">Dessert</p></td>
+  </tr>
+</table>
 
 
+### Battle Royal Mode 
+Become the lastman standing in the maps!
 
+<table>
+  <tr>
+    <td valign="mid">
+        <img src="docs/roundstart_desert.jpg" alt="Sports News Portrait" width="200"/>
+    </td>
+    <td valign="mid">
+       <img src="docs/battle-royale-win.jpg" alt="Sports News Landscape" width="200"/>
+    </td>
+  </tr>
+  <tr>
+    <td><p align="center">Start</p></td>
+    <td><p align="center">Game Over</p></td>
+  </tr>
+</table>
+
+
+### Time attack Mode
+Collect as much cash you could in the limited time event!
+
+<table>
+  <tr>
+    <td valign="mid">
+        <img src="docs/roundstart_time_snow.jpg" alt="Sports News Portrait" width="200"/>
+    </td>
+    <td valign="mid">
+       <img src="docs/round_end_time_snow.jpg" alt="Sports News Landscape" width="200"/>
+    </td>
+  </tr>
+  <tr>
+    <td><p align="center">Start</p></td>
+    <td><p align="center">Game Over</p></td>
+  </tr>
+</table>
+
+### Cash & Shop System
+
+<table>
+  <tr>
+    <td valign="mid">
+        <img src="docs/shop1.jpg" alt="Sports News Portrait" width="200"/>
+    </td>
+    <td valign="mid">
+       <img src="docs/shop2.jpg" alt="Sports News Landscape" width="200"/>
+    </td>
+  </tr>
+  <tr>
+    <td><p align="center">Shop</p></td>
+    <td><p align="center">Upgraded Weapon Shop</p></td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td valign="mid">
+        <img src="docs/weapon1.jpg" alt="Sports News Portrait" width="200"/>
+    </td>
+    <td valign="mid">
+       <img src="docs/weapon2.jpg" alt="Sports News Landscape" width="200"/>
+    </td>
+  </tr>
+  <tr>
+    <td><p align="center">Upgraded Weapon (Shell)</p></td>
+    <td><p align="center">Basic Weapon (Machine Gun)</p></td>
+  </tr>
+</table>
+
+### AI based Troops
+
+<table>
+  <tr>
+    <th>No</th>
+    <th>Troops (NPC)</th>
+    <th>Desc</th>
+  </tr>
+  <td valign="mid">
+        1
+    </td>
+    <td valign="mid">
+        <img src="docs/shooter.jpg" alt="Sports News Portrait" width="200"/>
+    </td>
+    <td valign="top">
+        Fill fire closest enemies. Can be purchased in shop.
+    </td>
+  </tr>
+  <tr>
+  <td valign="mid">
+        2
+    </td>
+    <td valign="mid">
+       <img src="docs/coincollector.jpg" alt="Sports News Landscape" width="200"/>
+    </td>
+    <td valign="top">
+        Collect nearest coins. Can be purchased in shop.
+    </td>
+  </tr>
+</table>
+
+## 🚀 Quick start
+
+We use <code>Unity</code> IDE to build the game into <code>.exe</code>
+
+Also, it is recommended to modify the scripts in game using <b>Visual Studio</b> IDE.
+
+**Build and run the apps locally**
+
+### Step 1: Clone The Repo
+
+Fork the repository. then clone the repo locally by doing -
+
+```bash
+git clone https://github.com/William9923/Tanks-Extended
+```
+
+### Step 2: Run the Project
+
+cd into the directory
+```bash
+cd Tanks-Extended
+```
+
+open and build in Unity Game Engine
+
+
+### Step 3: Run in Unity or as `.exe`
+
+The .exe is in the root directory after build.
+
+## 📚 Tech Stack
+- Unity Game Engine
+
+
+## ❤️ Support
+If you feel that this repo have helped you provide more example on learning software engineering, then it is enough for me! Wanna contribute more? Please ⭐ this repo so other can see it too!
